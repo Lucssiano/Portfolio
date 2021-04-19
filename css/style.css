@@ -251,6 +251,7 @@ ul.ul-links-list li a.active {
 	font-size: 5rem;
 	/* color: var(--primary-color); */
 	color: var(--white);
+	text-shadow: 2px 2px 10px var(--little-grey);
 }
 .main-content .social-media-icons {
 	text-align: left;
@@ -303,7 +304,7 @@ ul.ul-links-list li a.active {
 		height: 3.5rem;
 		width: 0.4rem;
 		top: -13%;
-		right: 40%;
+		right: 35%;
 		background-color: var(--tertiary-color);
 	}
 	.main-content .decorative-name-line-right p::after {
@@ -312,7 +313,7 @@ ul.ul-links-list li a.active {
 		height: 3.5rem;
 		width: 0.4rem;
 		top: 102%;
-		right: 40%;
+		right: 35%;
 		background-color: var(--tertiary-color);
 	}
 }
