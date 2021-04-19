@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ### Generales ### */
+:root {
+	--font-page: 'Poppins', sans-serif;
+	--yellow: #ffc900;
+	--black: #000;
+	--little-grey: #ccc;
+	--white: #fff;
+	--orange: #ff8700;
+}
+body {
+	font-family: var(--font-page);
+	background-color: var(--black);
+}
+li {
+	list-style: none;
+}
+i {
+	color: var(--yellow);
+	font-size: 6rem;
+}
+/* ###################### */
+
+/* ### Header ### */
+header {
+	display: flex;
+	justify-content: space-between;
+	padding: 1.2rem;
+	z-index: 999;
+	width: 100%;
+	position: fixed;
+	background-color: var(--black);
+	transition: 1s;
+}
+@media (min-width: 768px) {
+	header {
+		justify-content: space-around;
+	}
+}
+.img-logo-container img {
+	max-height: 3.7rem;
+}
+.menu-button {
+	cursor: pointer;
+	position: absolute;
+	top: 2.1rem;
+	right: 1.5rem;
+}
+@media (min-width: 768px) {
+	.menu-button {
+		display: none;
+	}
+}
+.menu-button > div {
+	width: 2.5rem;
+	height: 0.3rem;
+	margin-bottom: 0.4rem;
+	background-color: var(--yellow);
+	transition: all 0.35s linear;
+}
+.menu-button .menu-div.line-1.active {
+	transform: translateY(8px) rotate(45deg);
+}
+.menu-button .menu-div.line-2.active {
+	opacity: 0;
+}
+.menu-button .menu-div.line-3.active {
+	transform: translateY(-6px) rotate(-45deg);
+}
+.ul-links-list {
+	position: absolute;
+	right: -99rem;
+	top: 6rem;
+	/* right: 0;
+	top: -30rem; */
+	width: 100%;
+	text-align: center;
+	background-color: var(--black);
+	transition: all 0.35s linear;
+}
+@media (min-width: 768px) {
+	.ul-links-list {
+		position: static;
+		display: flex;
+		justify-content: space-evenly;
+	}
+}
+.ul-links-list.active {
+	/* top: 6rem; */
+	right: 0;
+}
+ul.ul-links-list > li {
+	padding: 2rem 0;
+	border-top: 1px solid var(--little-grey);
+}
+@media (min-width: 768px) {
+	ul.ul-links-list > li {
+		padding: 1rem;
+		border-top: none;
+	}
+}
+ul.ul-links-list > li:nth-child(5) {
+	box-shadow: 2px 7px 7px -2px var(--yellow);
+}
+@media (min-width: 768px) {
+	ul.ul-links-list > li:nth-child(5) {
+		box-shadow: none;
+	}
+}
+ul.ul-links-list li > a {
+	color: var(--white);
+	font-weight: 400;
+	display: block;
+}
+ul.ul-links-list li a.active {
+	/* Para que se haga más fuerte la palabra cuando se encuentra en una sección de la pág (hacerlo en js automático) */
+	font-weight: 800;
+}
+/* ¿Cómo podría poner un punto sin que sea mucho quilombo como con el ejemplo del portfolio? */
+/* @media (min-width: 768px) {
+	ul.ul-links-list li a.active::after {
+		position: absolute;
+		left: 39%;
+		bottom: 15%;
+		content: '';
+		width: 0.8rem;
+		height: 0.8rem;
+		border-radius: 50%;
+		background: var(--yellow);
+	}
+} */
+/* ###################### */
+
+/* ### Main Content ### */
+.main-content {
+	display: flex;
+	flex-direction: column;
+}
+.main-content h1 {
+	padding-top: 10rem;
+	font-size: 6.9rem;
+	text-align: center;
+	letter-spacing: 1.4rem;
+	-webkit-text-stroke: 2px var(--little-grey);
+	color: transparent;
+}
+.main-content .my-image-container {
+	text-align: center;
+}
+.main-content .my-image-container img {
+	padding: 1.5rem 0;
+	height: 28rem;
+	border-radius: 50%;
+}
+.main-content p {
+	padding-left: 2rem;
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 4rem;
+	/* color: var(--white); */
+	color: var(--yellow);
+	position: relative;
+}
+.main-content p::after {
+	position: absolute;
+	content: '';
+	top: 2.5rem;
+	right: 11rem;
+	width: 4.8rem;
+	height: 0.2rem;
+	background-color: var(--yellow);
+}
+.main-content h2 {
+	padding-left: 2rem;
+	font-size: 5rem;
+	text-align: left;
+	text-transform: uppercase;
+	/* color: var(--yellow); */
+	color: var(--white);
+}
+.main-content .social-media-icons {
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+.main-content .social-media-icons a i {
+	padding-right: 1.5rem;
+	/* Animar los iconos */
+}
+/* ###################### */
