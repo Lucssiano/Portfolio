@@ -48,7 +48,9 @@ window.onscroll = function () {
 	// Si se scrollea un poco se le aplica la sombra al header
 	if (principalUbication < actualUbication) {
 		$('.header').style.boxShadow = '2px 7px 7px -2px var(--primary-color)'; // #868686
+		// $('.header').style.borderBottom = '2px solid var(--little-grey)';
 	} else {
 		$('.header').style.boxShadow = 'none';
+		// $('.header').style.borderBottom = 'none';
 	}
 };
