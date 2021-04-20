@@ -20,12 +20,6 @@ i {
 	color: var(--primary-color);
 	font-size: 6rem;
 }
-@media (min-width: 768px) {
-	i:hover {
-		color: var(--little-grey);
-		text-shadow: 0 0.2rem 1.5rem var(--primary-color);
-	}
-}
 h2.title {
 	font-size: 6.5rem;
 	font-weight: 800;
@@ -128,6 +122,7 @@ ul.ul-links-list li > a {
 @media (min-width: 768px) {
 	ul.ul-links-list li > a:hover {
 		color: var(--primary-color);
+		text-shadow: 0.2rem 0.2rem 1rem var(--little-grey);
 	}
 }
 ul.ul-links-list li a.active {
@@ -151,9 +146,10 @@ ul.ul-links-list li a.active {
 
 /* ### Main Content ### */
 .main-content {
-	padding: 10rem 0;
+	padding-top: 10rem;
 	display: flex;
 	flex-flow: column nowrap;
+	position: relative; /* Para acomodar la líneas decorativas con mi nombre , tomando como referencia esta sección */
 }
 @media (min-width: 768px) {
 	.main-content {
@@ -162,18 +158,18 @@ ul.ul-links-list li a.active {
 		justify-content: center;
 	}
 }
-.main-content .decorative-name-line-left {
+.main-content .decorative-name-line {
 	display: none;
+	/* Ver si hay alguna manera de mantenerlo fijo */
 }
 @media (min-width: 1200px) {
-	.main-content .decorative-name-line-left {
-		display: inline-block;
+	.main-content .decorative-name-line {
+		display: block;
 	}
-	.main-content .decorative-name-line-left p {
+	.main-content .decorative-name-line p {
 		position: absolute;
-		top: 16%;
-		left: 13%;
 		text-transform: uppercase;
+		top: 24%;
 		font-weight: 900;
 		font-size: 1.6rem;
 		color: var(--white);
@@ -181,23 +177,35 @@ ul.ul-links-list li a.active {
 		text-orientation: upright;
 		text-shadow: 0.2rem 0.2rem 1rem var(--little-grey);
 	}
-	.main-content .decorative-name-line-left p::before {
+	.main-content .decorative-name-line.left p {
+		left: 13%;
+	}
+	.main-content .decorative-name-line.right p {
+		right: 13%;
+	}
+	.main-content .decorative-name-line p::before,
+	.main-content .decorative-name-line p::after {
 		position: absolute;
 		content: '';
 		height: 3.5rem;
 		width: 0.4rem;
-		top: -13%;
-		left: 40%;
 		background-color: var(--tertiary-color);
 	}
-	.main-content .decorative-name-line-left p::after {
-		position: absolute;
-		content: '';
-		height: 3.5rem;
-		width: 0.4rem;
+	.main-content .decorative-name-line.left p::before {
+		top: -13%;
+		left: 35%;
+	}
+	.main-content .decorative-name-line.left p::after {
 		top: 102%;
-		left: 40%;
-		background-color: var(--tertiary-color);
+		left: 35%;
+	}
+	.main-content .decorative-name-line.right p::before {
+		top: -13%;
+		right: 35%;
+	}
+	.main-content .decorative-name-line.right p::after {
+		top: 102%;
+		right: 35%;
 	}
 }
 .main-content .my-image-container {
@@ -282,54 +290,35 @@ ul.ul-links-list li a.active {
 		transform: scale(1.2);
 	}
 }
-/* .bxs-down-arrow-alt {
-	text-align: center;
-	animation: scroll-down .5s alternate infinite ease-in;
+@media (min-width: 768px) {
+	.main-content .social-media-icons a i:hover {
+		color: var(--little-grey);
+		text-shadow: 0 0.2rem 1.5rem var(--primary-color);
+	}
+}
+/* ###################### */
+
+/* ### Scroll Down Section ### */
+.scroll-down-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10rem;
+}
+.scroll-down-container .bxs-down-arrow-alt,
+.scroll-down-container p {
+	animation: scroll-down 0.6s alternate infinite ease-in;
+}
+.scroll-down-container p {
+	font-size: 1.6rem;
+	color: var(--little-grey);
 }
 @keyframes scroll-down {
 	0% {
-		transform: translateY(-2rem);
+		transform: translateY(-8rem);
 	}
 	100% {
 		transform: translateY(0);
-	}
-} */
-.main-content .decorative-name-line-right {
-	display: none;
-}
-@media (min-width: 1200px) {
-	.main-content .decorative-name-line-right {
-		display: inline-block;
-	}
-	.main-content .decorative-name-line-right p {
-		position: absolute;
-		top: 16%;
-		right: 13%;
-		text-transform: uppercase;
-		font-weight: 900;
-		font-size: 1.6rem;
-		color: var(--white);
-		writing-mode: vertical-rl;
-		text-orientation: upright;
-		text-shadow: 0.2rem 0.2rem 1rem var(--little-grey);
-	}
-	.main-content .decorative-name-line-right p::before {
-		position: absolute;
-		content: '';
-		height: 3.5rem;
-		width: 0.4rem;
-		top: -13%;
-		right: 35%;
-		background-color: var(--tertiary-color);
-	}
-	.main-content .decorative-name-line-right p::after {
-		position: absolute;
-		content: '';
-		height: 3.5rem;
-		width: 0.4rem;
-		top: 102%;
-		right: 35%;
-		background-color: var(--tertiary-color);
 	}
 }
 /* ###################### */
