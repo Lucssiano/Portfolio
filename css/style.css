@@ -40,7 +40,15 @@ header {
 }
 @media (min-width: 768px) {
 	header {
-		justify-content: space-around;
+		justify-content: space-evenly;
+	}
+}
+@media (min-width: 1200px) {
+	header {
+		justify-content: center;
+	}
+	.img-logo-container {
+		padding-right: 38rem;
 	}
 }
 .img-logo-container img {
@@ -167,7 +175,8 @@ ul.ul-links-list li a.active {
 		display: block;
 	}
 	.main-content .decorative-name-line p {
-		position: absolute;
+		/* position: absolute; */
+		position: relative;
 		text-transform: uppercase;
 		top: 24%;
 		font-weight: 900;
@@ -178,10 +187,12 @@ ul.ul-links-list li a.active {
 		text-shadow: 0.2rem 0.2rem 1rem var(--little-grey);
 	}
 	.main-content .decorative-name-line.left p {
-		left: 13%;
+		/* left: 13%; */
+		right: 950%;
 	}
 	.main-content .decorative-name-line.right p {
-		right: 13%;
+		/* right: 13%; */
+		left: 950%;
 	}
 	.main-content .decorative-name-line p::before,
 	.main-content .decorative-name-line p::after {
