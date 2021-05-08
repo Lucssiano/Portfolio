@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Itim&display=swap');
 
 /* ### Generales ### */
 :root {
@@ -6,8 +7,9 @@
 	--primary-color: #ffc900;
 	--black: #000;
 	--little-grey: #ccc;
+	--secondary-color: #eee;
 	--white: #fff;
-	--tertiary-color: #ff8700;
+	--orange: #ff8700;
 }
 body {
 	font-family: var(--font-page);
@@ -27,6 +29,12 @@ h2.title {
 	font-size: 6.5rem;
 	font-weight: 800;
 	text-align: center;
+}
+.symbol {
+	display: inline-block;
+	font-family: 'Inconsolata', monospace;
+	font-size: 2.4rem;
+	font-weight: 500;
 }
 /* ###################### */
 
@@ -210,7 +218,7 @@ ul.ul-links-list li a.active {
 		content: '';
 		height: 3.5rem;
 		width: 0.4rem;
-		background-color: var(--tertiary-color);
+		background-color: var(--primary-color);
 	}
 	.main-content .decorative-name-line.left p::before {
 		top: -13%;
@@ -311,7 +319,7 @@ ul.ul-links-list li a.active {
 }
 @media (min-width: 768px) {
 	.main-content .social-media-icons a i:hover {
-		color: var(--little-grey);
+		color: var(--white);
 		text-shadow: 0 0.2rem 1.5rem var(--primary-color);
 	}
 }
@@ -346,14 +354,93 @@ ul.ul-links-list li a.active {
 
 /* ### About Me ### */
 .about-me {
-	background-color: var(--white);
+	background-color: var(--secondary-color);
+	padding: 2rem;
 }
 .about-me h2 {
 	color: var(--black);
-	padding: 6rem 0 4rem 0;
+	padding: 4rem 0 3rem 0;
 }
 .about-me h2 span {
 	-webkit-text-stroke: 0.275rem var(--black);
 	color: var(--primary-color);
+}
+.about-me-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+@media (min-width: 768px) {
+	.about-me-container {
+		flex-direction: row;
+	}
+}
+@media (min-width: 1700px) {
+	.about-me-container {
+		flex-direction: column;
+	}
+}
+.about-me-img {
+	padding-bottom: 2rem;
+}
+@media (min-width: 768px) {
+	.about-me-information-container {
+		display: flex;
+		flex-direction: column;
+		max-width: 55%;
+	}
+}
+@media (min-width: 1700px) {
+	.about-me-information-container {
+		max-width: 108rem;
+	}
+}
+.symbol.description::before {
+	content: '<';
+}
+.symbol.description::after {
+	content: '>';
+}
+.description-container {
+	margin: 3rem 0;
+	padding: 1.8rem 0;
+	background-color: #8e9eab;
+}
+.description-container p {
+	padding: 1rem 2rem 2rem 2rem;
+	letter-spacing: 0.2rem;
+	line-height: 3rem;
+	font-size: 1.8rem;
+}
+.description-container p::first-letter {
+	font-size: 2rem;
+	font-weight: 500;
+}
+.curriculum-section {
+	padding: 1rem 0 3rem 0;
+	display: flex;
+	justify-content: center;
+}
+a.curriculum-vitae-button {
+	text-align: center;
+	padding: 1.5rem;
+	color: var(--black);
+	background-color: var(--primary-color);
+	box-shadow: 0 1rem 1rem var(--little-grey);
+	border: 0.2rem solid var(--black);
+	transition: all 0.5s ease;
+}
+@media (min-width: 768px) {
+	a.curriculum-vitae-button:hover {
+		background-color: var(--orange);
+		color: var(--white);
+		animation: beat .4s alternate infinite ease-in;
+	}
+}
+a.curriculum-vitae-button p {
+	text-transform: uppercase;
+	font-weight: 800;
+	line-height: 2.5rem;
 }
 /* ###################### */
