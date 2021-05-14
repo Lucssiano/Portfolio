@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luciano Riente - Portfolio</title>
     <link rel="icon" href="img/icono2.png">
+    <!-- <script src="https://kit.fontawesome.com/7670173696.js" crossorigin="anonymous"></script> -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/style.css">
@@ -75,9 +76,9 @@
 
     <section class="about-me" id="about-me-section">
         <h2 class="title">About <span>Me</span></h2>
-        <div class="about-me-container">
+        <div class="flex-containers-about-me">
             <img src="img/Startup_Monochromatic.svg" alt="Start-Up-svg" class="about-me-img">
-            <div class="about-me-information-container">
+            <section class="about-me-information-container">
                 <h3 class="symbol description">Description</h3>
                 <div class="description-container">
                     <p>Currently, i am studying Front-end technologies on my own and i have been studying in the
@@ -91,14 +92,35 @@
                     </p>
                 </div>
                 <div class="curriculum-section">
-                    <!-- Poner el link de mi Curriculum -->
-                    <a href="metaphors page 159.pdf" target="_blank" class="curriculum-vitae-button">
+                    <a href="CV - LUCIANO RIENTE.pdf" target="_blank" class="curriculum-vitae-button">
                         <p>Curriculum Vitae (PDF)</p>
                     </a>
                 </div>
                 <h3 class="symbol description">Description/</h3>
-            </div>
+            </section> <!-- Description About Me -->
         </div>
+        <section class="my-languages-container">
+            <img src="img/undraw_education_f8ru.svg" alt="Education logo" class="books-image">
+            <h3 class="symbol">Languages</h3>
+            <div class="languages">
+                <div class="flex-language spanish-container">
+                    <p>Spanish</p>
+                    <img src="img/argentina.svg" alt="">
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-color spanish"></span>
+                </div>
+                <div class="flex-language english-container">
+                    <p>English</p>
+                    <img src="img/estados-unidos.svg" alt="">
+                </div>
+                <div class="progress-bar-container">
+                    <span class="progress-bar-color english"></span>
+                </div>
+            </div>
+            <p class="improving-paragraph">Improving my English...</p> <!-- Poner alguna animación -->
+            <h3 class="symbol">Languages/</h3>
+        </section> <!-- My languages -->
     </section> <!-- About Me section of the portfolio -->
 
     <script src="js/main.js"></script>
