@@ -5,11 +5,15 @@
 :root {
 	--font-page: 'Poppins', sans-serif;
 	--primary-color: #ffc900;
-	--black: #000;
-	--little-grey: #ccc;
-	--secondary-color: #eee;
-	--white: #fff;
+	--black: #000000;
+	--little-grey: #cccccc;
+	--little-white: #eeeeee;
+	--white: #ffffff;
 	--orange: #ff8700;
+	--dark-grey: #121212;
+	--dark-charcoal: #333333;
+	--dark-graphite: #262626;
+	--light-grey: #8e9eab;
 }
 body {
 	font-family: var(--font-page);
@@ -60,6 +64,7 @@ header {
 	width: 100%;
 	position: fixed;
 	background-color: var(--black);
+	/* background-color: var(--dark-grey); */
 	transition: 1s;
 }
 @media (min-width: 768px) {
@@ -115,6 +120,7 @@ header {
 	width: 100%;
 	text-align: center;
 	background-color: var(--black);
+	/* background-color: var(--dark-grey); */
 	transition: all 0.35s linear;
 }
 @media (min-width: 768px) {
@@ -189,6 +195,7 @@ ul.ul-links-list li a.active {
 	flex-flow: column nowrap;
 	position: relative; /* Para acomodar la líneas decorativas con mi nombre , tomando como referencia esta sección */
 	background-color: var(--black);
+	/* background-color: var(--dark-grey); */
 }
 @media (min-width: 768px) {
 	.main-content {
@@ -199,7 +206,6 @@ ul.ul-links-list li a.active {
 }
 .main-content .decorative-name-line {
 	display: none;
-	/* Ver si hay alguna manera de mantenerlo fijo */
 }
 @media (min-width: 1200px) {
 	.main-content .decorative-name-line {
@@ -215,7 +221,7 @@ ul.ul-links-list li a.active {
 		color: var(--white);
 		writing-mode: vertical-rl;
 		text-orientation: upright;
-		text-shadow: 0.2rem 0.2rem 1rem var(--little-grey);
+		/* text-shadow: 0.2rem 0.2rem 1rem var(--little-grey); */
 	}
 	.main-content .decorative-name-line.left p {
 		/* left: 13%; */
@@ -302,7 +308,7 @@ ul.ul-links-list li a.active {
 	padding-left: 2rem;
 	font-size: 5rem;
 	color: var(--white);
-	text-shadow: 0.2rem 0.2rem 1rem var(--little-grey);
+	/* text-shadow: 0.2rem 0.2rem 1rem var(--little-grey); */
 }
 .main-content .social-media-icons {
 	text-align: left;
@@ -346,6 +352,7 @@ ul.ul-links-list li a.active {
 	padding-top: 10rem;
 	border-bottom: 7px solid var(--little-grey);
 	background-color: var(--black);
+	/* background-color: var(--dark-grey); */
 }
 .scroll-down-container .bxs-down-arrow-alt,
 .scroll-down-container p {
@@ -367,8 +374,19 @@ ul.ul-links-list li a.active {
 
 /* ### About Me ### */
 .about-me {
-	background-color: var(--secondary-color);
+	background-color: var(--white);
+	/* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
+	/* background-color: var(--primary-color); */
+	/* background-color: var(--little-grey); */
+	/* background-color: #EF7244; */
+	/* background-image: url(/img/cool-background.png); */
 	padding: 2rem;
+	
+	/* background-image: url(/img/cool-background-black.png); */
+	/* background-image: url(/img/white-background.png); */
+	/* background-size: cover; 
+	background-image: url(/img/cool-background-grey.png); */
+	
 }
 .about-me h2 {
 	color: var(--black);
@@ -416,7 +434,7 @@ ul.ul-links-list li a.active {
 .description-container {
 	margin: 3rem 0;
 	padding: 1.8rem 0;
-	background-color: #8e9eab;
+	background-color: var(--light-grey);
 }
 .description-container p {
 	padding: 1rem 2rem 2rem 2rem;
@@ -471,14 +489,14 @@ a.curriculum-vitae-button p {
 	.languages-section {
 		width: 50%;
 		max-width: 72rem;
-	} 
+	}
 }
 .my-languages-container .books-image {
 	padding: 0 2rem 3rem 2rem;
 	align-self: center;
 }
 .my-languages-container .languages {
-	padding: 3.5rem 0;
+	padding: 3.5rem 0 2rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
