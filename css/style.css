@@ -598,17 +598,23 @@ a.curriculum-vitae-button p {
 	color: var(--dark-charcoal);
 }
 .soft-skills .skill .skill-description {
-	height: 0;
+	max-height: 0;
+	/* height: 0; */
 	overflow: hidden;
 	text-align: left;
 	background-color: var(--dark-charcoal);
 	color: var(--white);
 	transition: all 1s;
 }
-.soft-skills .skill .skill-description.active {
+.soft-skills .skill .skill-description p {
 	padding: 2rem;
-	height: auto;
+	line-height: 3rem;
+}
+.soft-skills .skill .skill-description.active {
+	/* height: 34rem; */
+	max-height: 40rem;
 	border: 1px solid var(--dark-graphite);
+	/* Ver como hacer una buena transición */
 }
 .list-under-contruction-container {
 	display: flex;
