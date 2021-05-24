@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Itim&display=swap');
 
-/* ### Generales ### */
+/* ### GENERAL ### */
 :root {
 	--font-page: 'Poppins', sans-serif;
 	--primary-color: #ffc900;
@@ -64,7 +64,7 @@ h2.title {
 }
 /* ###################### */
 
-/* ### Header ### */
+/* ### HEADER ### */
 header {
 	display: flex;
 	justify-content: space-between;
@@ -175,7 +175,7 @@ ul.ul-links-list li > a {
 	ul.ul-links-list li > a:hover {
 		color: var(--primary-color);
 		text-shadow: 0.2rem 0.2rem 1rem var(--little-grey);
-		border-bottom: 3px solid var(--primary-color);
+		border-bottom: 0.3rem solid var(--primary-color);
 	}
 }
 ul.ul-links-list li a.active {
@@ -197,7 +197,7 @@ ul.ul-links-list li a.active {
 } */
 /* ###################### */
 
-/* ### Main Content ### */
+/* ### MAIN CONTENT ### */
 .main-content {
 	padding-top: 10rem;
 	display: flex;
@@ -353,13 +353,13 @@ ul.ul-links-list li a.active {
 }
 /* ###################### */
 
-/* ### Scroll Down Section ### */
+/* ### SCROLL DOWN SECTION ### */
 .scroll-down-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding-top: 10rem;
-	border-bottom: 7px solid var(--little-grey);
+	border-bottom: 0.7rem solid var(--little-grey);
 	background-color: var(--black);
 	/* background-color: var(--dark-grey); */
 }
@@ -381,9 +381,10 @@ ul.ul-links-list li a.active {
 }
 /* ###################### */
 
-/* ### About Me ### */
+/* ### ABOUT ME ### */
 .about-me {
 	background-color: var(--white);
+	border-bottom: 0.7rem solid var(--little-grey);
 	padding: 2rem;
 	/* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
 	/* background-color: var(--little-grey); */
@@ -439,21 +440,21 @@ ul.ul-links-list li a.active {
 .description-container {
 	margin: 3rem 0;
 	padding: 1.8rem 0;
-	/* background-color: var(--dark-grey); */
-	background-color: var(--black);
-	border: 2px solid var(--primary-color);
-	/* background-color: black; */
+	background-color: var(--dark-charcoal);
+	/* border: 0.2rem solid var(--dark-graphite); */
+	box-shadow: 0 0.4rem 1rem var(--dark-graphite);
 }
 .description-container p {
 	padding: 1rem 2rem 2rem 2rem;
 	letter-spacing: 0.2rem;
 	line-height: 3rem;
 	font-size: 1.8rem;
-	color: var(--primary-color);
+	color: var(--white);
 }
 .description-container p::first-letter {
 	font-size: 2rem;
 	font-weight: 500;
+	color: var(--primary-color);
 }
 .curriculum-section {
 	padding: 1rem 0 3rem 0;
@@ -463,19 +464,18 @@ ul.ul-links-list li a.active {
 a.curriculum-vitae-button {
 	text-align: center;
 	padding: 1.5rem;
+	background-color: var(--dark-charcoal);
+	border: 0.2rem solid var(--dark-graphite);
 	color: var(--primary-color);
-	/* background-color: var(--dark-grey); */
-	background-color: var(--black);
 	box-shadow: 0 0.4rem 1rem var(--dark-graphite);
-	border: 0.2rem solid var(--primary-color);
 	transition: all 0.5s ease;
 	letter-spacing: 0.2rem;
 }
 @media (min-width: 768px) {
 	a.curriculum-vitae-button:hover {
-		background-color: var(--primary-color);
-		color: var(--black);
-		border: 0.2rem solid var(--black);
+		background-color: var(--black);
+		color: var(--primary-color);
+		border: 0.2rem solid var(--dark-charcoal);
 		animation: beat 0.4s alternate infinite ease-in;
 	}
 }
@@ -531,7 +531,7 @@ a.curriculum-vitae-button p {
 }
 .my-languages-container .progress-bar-container {
 	margin: 0.5rem 0;
-	background-color: var(--black);
+	background-color: var(--dark-charcoal);
 	width: 70%;
 	height: 2rem;
 	border-radius: 0.5rem;
@@ -586,7 +586,7 @@ a.curriculum-vitae-button p {
 	width: 100%;
 	padding: 2rem;
 	cursor: pointer;
-	border: 1px solid var(--dark-graphite);
+	border: 0.1rem solid var(--dark-graphite);
 	background-color: var(--black);
 	color: var(--primary-color);
 }
@@ -611,9 +611,9 @@ a.curriculum-vitae-button p {
 	line-height: 3rem;
 }
 .soft-skills .skill .skill-description.active {
-	/* height: 34rem; */
-	max-height: 40rem;
-	border: 1px solid var(--dark-graphite);
+	/* height: auto; */
+	max-height: 46rem;
+	border: 0.1rem solid var(--dark-graphite);
 	/* Ver como hacer una buena transición */
 }
 .list-under-contruction-container {
@@ -628,3 +628,136 @@ a.curriculum-vitae-button p {
 }
 /* ------------- */
 /* ###################### */
+
+/* ### KNOWLEDGES ### */
+.my-knowledges {
+	padding: 2rem;
+	background-color: var(--dark-grey);
+}
+.my-knowledges h2 {
+	font-size: 3.8rem;
+	color: var(--white);
+	padding: 4rem 0 5rem 0;
+	-webkit-text-stroke: 0.275rem var(--black);
+}
+@media (min-width: 468px) {
+	.my-knowledges h2 {
+		font-size: 6.5rem;
+	}
+}
+.my-knowledges h2 span {
+	color: var(--primary-color);
+}
+.my-knowledges .flex-knowdlege-container {
+	display: flex;
+	flex-direction: column;
+}
+@media (min-width: 768px) {
+	.my-knowledges .flex-knowdlege-container {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+}
+.my-knowledges .grid-technologies-section {
+	position: relative;
+	background-color: var(--dark-charcoal);
+	padding: 3rem;
+	border-radius: 10rem;
+}
+@media (min-width: 768px) {
+	.my-knowledges .grid-technologies-section {
+		margin-right: 20rem;
+	}
+}
+.my-knowledges .grid-technologies-section::after {
+	content: '';
+	position: absolute;
+	bottom: -1.5%;
+	left: 49%;
+	background-color: var(--dark-charcoal);
+	width: 1rem;
+	height: 4rem;
+}
+@media (min-width: 468px) {
+	.my-knowledges .grid-technologies-section::after {
+		bottom: -3%;
+	}
+}
+@media (min-width: 768px) {
+	.my-knowledges .grid-technologies-section::after {
+		top: 50%;
+		right: 56%;
+		background-color: var(--dark-charcoal);
+		width: 42.7rem;
+		height: 1rem;
+	}
+}
+.my-knowledges .grid-technologies-section .grid-technologies-container {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 6rem 0;
+	justify-items: center;
+	align-items: center;
+	text-align: center;
+}
+@media (min-width: 468px) {
+	.my-knowledges .grid-technologies-section .grid-technologies-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 1200px) {
+	.my-knowledges .grid-technologies-section .grid-technologies-container {
+		gap: 6rem 10rem;
+	}
+}
+.my-knowledges .grid-technologies-container .grid-technology {
+	z-index: 800;
+	background-color: var(--dark-charcoal);
+	padding: 1rem;
+}
+.my-knowledges .grid-technologies-container .grid-technology i {
+	font-size: 12rem;
+	/* background-color: var(--dark-grey); */
+}
+.my-knowledges .grid-technologies-container .grid-technology p {
+	color: white;
+	font-size: 2rem;
+	font-weight: 600;
+}
+.my-knowledges .flex-knowdlege-container .brain-loading-container {
+	margin-top: 2.5rem;
+	width: 18rem;
+	align-self: center;
+}
+@media (min-width: 768px) {
+	.my-knowledges .flex-knowdlege-container .brain-loading-container {
+		display: flex;
+		flex-direction: column-reverse;
+		margin-bottom: 5rem;
+	}
+}
+.flex-knowdlege-container .brain-loading-container .loading-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex-knowdlege-container .brain-loading-container .loading-container p {
+	font-style: italic;
+	font-weight: 600;
+	color: var(--white);
+	letter-spacing: 0.3rem;
+}
+.flex-knowdlege-container .brain-loading-container .loading-container i {
+	font-size: 3.5rem;
+	margin-left: 1rem;
+	color: var(--white);
+}
+/* ###################### */
+
+/* 
+PORTFOLIO:
+1- Mejorar la mezcla de colores
+2- Mejorar la transición de las Soft Skills
+3- Cambiar algunos parrafos por h3 o h4
+ */
