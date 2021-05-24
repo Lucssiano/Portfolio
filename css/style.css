@@ -689,8 +689,13 @@ a.curriculum-vitae-button p {
 		top: 50%;
 		right: 56%;
 		background-color: var(--dark-charcoal);
-		width: 42.7rem;
+		width: 38rem;
 		height: 1rem;
+	}
+}
+@media (min-width: 1200px) {
+	.my-knowledges .grid-technologies-section::after {
+		width: 42.7rem;
 	}
 }
 .my-knowledges .grid-technologies-section .grid-technologies-container {
