@@ -843,13 +843,15 @@ a.curriculum-vitae-button p {
 	text-transform: uppercase;
 }
 .my-projects .grid-projects-container .grid-project img {
-	max-width: 28rem;
 	padding: 1rem;
 	border-radius: 2rem;
 	background-color: var(--dark-graphite);
 	transition: 1s;
 }
 @media (min-width: 768px) {
+	.my-projects .grid-projects-container .grid-project img {
+		max-width: 28rem;
+	}
 	.my-projects .grid-projects-container .grid-project img:hover {
 		background-color: var(--primary-color);
 	}
@@ -892,7 +894,7 @@ a.curriculum-vitae-button p {
 	text-align: center;
 	margin-top: 3rem;
 }
-@media (min-width: 400px ) {
+@media (min-width: 400px) {
 	.my-projects .project-p-improving {
 		flex-direction: row;
 	}
