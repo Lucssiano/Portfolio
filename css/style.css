@@ -13,7 +13,8 @@
 	--dark-grey: #121212;
 	--dark-charcoal: #333333;
 	--dark-graphite: #262626;
-	--light-grey: #8e9eab;
+	--dark-red: #590a00;
+	--light-grey: #dbd1c5;
 	--short-paragraph-color: rgba(0, 0, 0, 0.7);
 }
 body {
@@ -31,9 +32,24 @@ i {
 	font-size: 6rem;
 }
 h2.title {
-	font-size: 6.5rem;
+	font-size: 3.8rem;
 	font-weight: 800;
 	text-align: center;
+}
+@media (min-width: 330px) {
+	h2.title {
+		font-size: 4.5rem;
+	}
+}
+@media (min-width: 420px) {
+	h2.title {
+		font-size: 5.5rem;
+	}
+}
+@media (min-width: 468px) {
+	h2.title {
+		font-size: 6.5rem;
+	}
 }
 .symbol {
 	display: inline-block;
@@ -441,8 +457,8 @@ ul.ul-links-list li a.active {
 	margin: 3rem 0;
 	padding: 1.8rem 0;
 	background-color: var(--dark-charcoal);
-	/* border: 0.2rem solid var(--dark-graphite); */
-	box-shadow: 0 0.4rem 1rem var(--dark-graphite);
+	border: 0.2rem solid var(--dark-graphite);
+	/* box-shadow: 0 0.4rem 1rem var(--dark-graphite); */
 }
 .description-container p {
 	padding: 1rem 2rem 2rem 2rem;
@@ -464,8 +480,8 @@ ul.ul-links-list li a.active {
 a.curriculum-vitae-button {
 	text-align: center;
 	padding: 1.5rem;
-	background-color: var(--dark-charcoal);
-	border: 0.2rem solid var(--dark-graphite);
+	background-color: var(--black);
+	border: 0.2rem solid var(--dark-grey);
 	color: var(--primary-color);
 	box-shadow: 0 0.4rem 1rem var(--dark-graphite);
 	transition: all 0.5s ease;
@@ -473,9 +489,9 @@ a.curriculum-vitae-button {
 }
 @media (min-width: 768px) {
 	a.curriculum-vitae-button:hover {
-		background-color: var(--black);
-		color: var(--primary-color);
-		border: 0.2rem solid var(--dark-charcoal);
+		background-color: var(--primary-color);
+		color: var(--black);
+		border: 0.2rem solid var(--black);
 		animation: beat 0.4s alternate infinite ease-in;
 	}
 }
@@ -568,6 +584,9 @@ a.curriculum-vitae-button p {
 .soft-skills-container .soft-skills-image {
 	padding: 2rem 1rem;
 }
+.soft-skills-container .soft-skills-section {
+	margin-bottom: 5rem;
+}
 @media (min-width: 768px) {
 	.soft-skills-container .soft-skills-section {
 		max-width: 50.6rem;
@@ -588,6 +607,7 @@ a.curriculum-vitae-button p {
 	cursor: pointer;
 	border: 0.1rem solid var(--dark-graphite);
 	background-color: var(--black);
+	/* background-color: var(--dark-graphite); */
 	color: var(--primary-color);
 }
 .soft-skills .skill .skill-header i {
@@ -596,6 +616,7 @@ a.curriculum-vitae-button p {
 }
 .soft-skills .skill .skill-header i.active {
 	color: var(--dark-charcoal);
+	/* color: var(--white); */
 }
 .soft-skills .skill .skill-description {
 	max-height: 0;
@@ -633,17 +654,12 @@ a.curriculum-vitae-button p {
 .my-knowledges {
 	padding: 2rem;
 	background-color: var(--dark-grey);
+	border-bottom: 0.7rem solid var(--little-grey);
 }
 .my-knowledges h2 {
-	font-size: 3.8rem;
 	color: var(--white);
 	padding: 4rem 0 5rem 0;
 	-webkit-text-stroke: 0.275rem var(--black);
-}
-@media (min-width: 468px) {
-	.my-knowledges h2 {
-		font-size: 6.5rem;
-	}
 }
 .my-knowledges h2 span {
 	color: var(--primary-color);
@@ -651,6 +667,7 @@ a.curriculum-vitae-button p {
 .my-knowledges .flex-knowdlege-container {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 5rem;
 }
 @media (min-width: 768px) {
 	.my-knowledges .flex-knowdlege-container {
@@ -673,21 +690,21 @@ a.curriculum-vitae-button p {
 .my-knowledges .grid-technologies-section::after {
 	content: '';
 	position: absolute;
-	bottom: -1.5%;
+	bottom: -3%;
 	left: 49%;
 	background-color: var(--dark-charcoal);
 	width: 1rem;
-	height: 4rem;
+	height: 10rem;
 }
 @media (min-width: 468px) {
 	.my-knowledges .grid-technologies-section::after {
-		bottom: -3%;
+		bottom: -6%;
 	}
 }
 @media (min-width: 768px) {
 	.my-knowledges .grid-technologies-section::after {
 		top: 50%;
-		right: 56%;
+		right: 70%;
 		background-color: var(--dark-charcoal);
 		width: 38rem;
 		height: 1rem;
@@ -731,8 +748,7 @@ a.curriculum-vitae-button p {
 	font-weight: 600;
 }
 .my-knowledges .flex-knowdlege-container .brain-loading-container {
-	margin-top: 2.5rem;
-	width: 18rem;
+	margin-top: 3rem;
 	align-self: center;
 }
 @media (min-width: 768px) {
@@ -742,10 +758,17 @@ a.curriculum-vitae-button p {
 		margin-bottom: 5rem;
 	}
 }
+.my-knowledges .flex-knowdlege-container .brain-loading-container img {
+	background-color: var(--dark-charcoal);
+	width: 18rem;
+	border-radius: 10rem;
+	padding: 2rem;
+}
 .flex-knowdlege-container .brain-loading-container .loading-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: 1rem;
 }
 .flex-knowdlege-container .brain-loading-container .loading-container p {
 	font-style: italic;
@@ -760,9 +783,136 @@ a.curriculum-vitae-button p {
 }
 /* ###################### */
 
+/* ### PROJECTS ### */
+.my-projects {
+	border-bottom: 0.7rem solid var(--little-grey);
+	padding: 2rem;
+	background-color: var(--primary-color);
+	/* background-color: #ff9600; */
+}
+.my-projects h2 {
+	color: var(--dark-charcoal);
+	-webkit-text-stroke: 0.275rem var(--black);
+	padding: 4rem 0 6rem 0;
+}
+.my-projects h2 span {
+	color: var(--white);
+}
+.my-projects .grid-projects-container {
+	display: grid;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	grid-template-columns: 90%;
+	grid-template-rows: repeat(6, 1fr);
+	gap: 7rem;
+}
+@media (min-width: 468px) {
+	.my-projects .grid-projects-container {
+		grid-template-columns: 60%;
+	}
+}
+@media (min-width: 768px) {
+	.my-projects .grid-projects-container {
+		grid-template-columns: repeat(2, 33.2rem);
+		grid-template-rows: repeat(3, 1fr);
+		gap: 4rem 7rem;
+	}
+}
+.my-projects .grid-projects-container .grid-project {
+	background-color: var(--black);
+	/* border-radius: 1rem; */
+	border-radius: 8%;
+	box-shadow: 0 0.4rem 1rem var(--dark-graphite);
+	align-self: center;
+	border: 0.3rem solid var(--white);
+	padding: 1rem;
+	transition: transform 0.5s;
+}
+@media (min-width: 768px) {
+	.my-projects .grid-projects-container .grid-project:hover {
+		transform: scale(1.02);
+	}
+}
+.my-projects .grid-projects-container .grid-project h4.project-name {
+	-webkit-text-stroke: 0.1rem var(--primary-color);
+	letter-spacing: 0.3rem;
+	padding: 2rem 0;
+	font-size: 2rem;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.my-projects .grid-projects-container .grid-project img {
+	max-width: 28rem;
+	padding: 1rem;
+	border-radius: 2rem;
+	background-color: var(--dark-graphite);
+	transition: 1s;
+}
+@media (min-width: 768px) {
+	.my-projects .grid-projects-container .grid-project img:hover {
+		background-color: var(--primary-color);
+	}
+}
+.grid-projects-container .grid-project .flex-view-project-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.grid-project .flex-view-project-container .code-project,
+.grid-project .flex-view-project-container .page-project {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem 0;
+}
+.grid-project .flex-view-project-container .code-project p,
+.grid-project .flex-view-project-container .page-project p {
+	color: var(--white);
+	padding-right: 0.8rem;
+}
+.grid-project .flex-view-project-container .code-project i,
+.grid-project .flex-view-project-container .page-project i {
+	color: var(--white);
+	font-size: 2rem;
+}
+@media (min-width: 768px) {
+	.grid-project .flex-view-project-container .code-project i:hover,
+	.grid-project .flex-view-project-container .page-project i:hover,
+	.grid-project .flex-view-project-container .code-project p:hover,
+	.grid-project .flex-view-project-container .page-project p:hover {
+		color: var(--primary-color);
+	}
+}
+.my-projects .project-p-improving {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin-top: 3rem;
+}
+@media (min-width: 400px ) {
+	.my-projects .project-p-improving {
+		flex-direction: row;
+	}
+}
+.my-projects .project-p-improving p {
+	color: var(--dark-charcoal);
+	padding-bottom: 1rem;
+}
+.my-projects .project-p-improving i {
+	font-size: 1.8rem;
+	color: var(--dark-charcoal);
+	padding-left: 0.5rem;
+}
 /* ###################### */
-/* PORTFOLIO:
+
+/* 
+PORTFOLIO:
 1- Mejorar la mezcla de colores
 2- Mejorar la transición de las Soft Skills
-3- Cambiar algunos parrafos por h3 o h4 */
+3- Cambiar algunos parrafos por h3 o h4 
+4- Ver si hay una mejor manera de acomodar los tamaños de las cards
+*/
 /* ###################### */
