@@ -846,6 +846,19 @@ a.curriculum-vitae-button p {
 	font-weight: 900;
 	text-transform: uppercase;
 }
+.my-projects .grid-projects-container .grid-project p.hover-image-paragraph {
+	color: var(--dark-red);
+	font-weight: 900;
+	height: 0;
+	overflow: hidden;
+	transition: 2s;
+}
+@media (min-width: 768px) {
+	.my-projects .grid-projects-container .grid-project p.hover-image-paragraph {
+		height: 3.8rem;
+		padding-bottom: 2rem;
+	}
+}
 .my-projects .grid-projects-container .grid-project img {
 	padding: 0.5rem;
 	border-radius: 2rem;
@@ -873,25 +886,30 @@ a.curriculum-vitae-button p {
 		background-color: var(--short-paragraph-color);
 		border-radius: 2rem;
 	}
-	.my-projects .grid-projects-container .grid-project .description-project p {
-		text-align: center;
-		font-size: 1.4rem;
-		font-weight: 500;
-		line-height: 1.8rem;
-		color: var(--white);
-		padding: 0.5rem;
-	}
-	.my-projects .grid-projects-container .grid-project .description-project p span.click-to-go {
-		color: var(--primary-color);
-		font-weight: 900;
-	}
-	.my-projects .grid-projects-container .grid-project .description-project p span.renovation-paragraph {
-		font-size: 1.2rem;
-		font-weight: 900;
-		text-transform: uppercase;
-		letter-spacing: 0.5rem;
-		color: var(--dark-red);
-	}
+}
+.my-projects .grid-projects-container .grid-project .description-project.view-description-mobile {
+	opacity: 1;
+	background-color: var(--short-paragraph-color);
+	border-radius: 2rem;
+}
+.my-projects .grid-projects-container .grid-project .description-project p {
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: 500;
+	line-height: 1.8rem;
+	color: var(--white);
+	padding: 0.5rem;
+}
+.my-projects .grid-projects-container .grid-project .description-project p span.click-to-go {
+	color: var(--primary-color);
+	font-weight: 900;
+}
+.my-projects .grid-projects-container .grid-project .description-project p span.renovation-paragraph {
+	font-size: 1.2rem;
+	font-weight: 900;
+	text-transform: uppercase;
+	letter-spacing: 0.5rem;
+	color: var(--dark-red);
 }
 .grid-projects-container .grid-project .flex-view-project-container {
 	display: flex;
@@ -952,6 +970,5 @@ PORTFOLIO:
 1- Mejorar la mezcla de colores
 2- Mejorar la transición de las Soft Skills
 3- Cambiar algunos parrafos por h3 o h4 
-4- Ver si hay una mejor manera de acomodar los tamaños de las cards
 */
 /* ###################### */

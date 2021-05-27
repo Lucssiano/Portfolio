@@ -24,6 +24,13 @@ const skillsHeaderArrow = $$('.skill-header i');
 const skillsDescription = $$('.skill-description');
 // ------------- //
 
+// --- Project Cards --- //
+const linkImageContainer = $$('.img-link');
+const hoverImageParagraph = $$('.hover-image-paragraph');
+const descriptionProject = $$('.description-project');
+// const gridProject = $$('.grid-project');
+// ------------- //
+
 // ################# //
 
 // ### FUNCIONES ### //
@@ -54,18 +61,20 @@ window.addEventListener('click', (e) => {
 	}
 });
 
-// Para que el header cambie cuando se scrollea //
-// Ubicación principal de la página (cuando está arriba de todo)
-let principalUbication = window.pageYOffset;
+// Para que el header cambie cuando se scrollea y para que aparezca la descripción de los projectos en mobile //
+// Ubicación de la página al principio de todo
+let pageUbication = window.pageYOffset;
 window.onscroll = function () {
 	let actualUbication = window.pageYOffset;
-	if (principalUbication < actualUbication) {
+	// console.log(actualUbication);
+	if (pageUbication < actualUbication) {
 		$('.header').style.boxShadow = '2px 4.5px 4.5px -2px var(--primary-color)'; // #868686
 		// $('.header').style.borderBottom = '2px solid var(--little-grey)';
 	} else {
 		$('.header').style.boxShadow = 'none';
 		// $('.header').style.borderBottom = 'none';
 	}
+	projectsDescription(actualUbication);
 };
 // ------------- //
 
@@ -77,6 +86,61 @@ for (let i = 0; i < skillsHeader.length; i++) {
 		skillsHeaderArrow[i].classList.toggle('bxs-chevron-up');
 		skillsHeaderArrow[i].classList.toggle('active');
 	});
+}
+// ------------- //
+
+// --- Project Cards --- //
+for (let c = 0; c < linkImageContainer.length; c++) {
+	linkImageContainer[c].addEventListener('mouseover', () => {
+		hoverImageParagraph[c].style.height = 0;
+		hoverImageParagraph[c].style.paddingBottom = 0;
+		linkImageContainer[c].addEventListener('mouseout', () => {
+			hoverImageParagraph[c].style.height = '3.8rem';
+			hoverImageParagraph[c].style.paddingBottom = '2rem';
+		});
+	});
+}
+
+function projectsDescription(actualUbication) {
+	// const firstCard = gridProject[0].offsetTop >= actualUbication && gridProject[0].offsetTop <= gridProject[1].offsetTop;
+	const firstCard = actualUbication >= 5474 && actualUbication <= 5886;
+	const secondCard = actualUbication >= 5956 && actualUbication <= 6305;
+	const thirdCard = actualUbication >= 6339 && actualUbication <= 6689;
+	const fourthCard = actualUbication >= 6753 && actualUbication <= 7101;
+	const fifthCard = actualUbication >= 7137 && actualUbication <= 7494;
+	const sixthCard = actualUbication >= 7528 && actualUbication <= 7891;
+
+	// CODIGO TEMPORAL PORQUE NO SE ME OCURRE ALGO MÁS SIMPLIFICADO
+	if (firstCard) {
+		descriptionProject[0].classList.add('view-description-mobile');
+	} else {
+		descriptionProject[0].classList.remove('view-description-mobile');
+	}
+	if (secondCard) {
+		descriptionProject[1].classList.add('view-description-mobile');
+	} else {
+		descriptionProject[1].classList.remove('view-description-mobile');
+	}
+	if (thirdCard) {
+		descriptionProject[2].classList.add('view-description-mobile');
+	} else {
+		descriptionProject[2].classList.remove('view-description-mobile');
+	}
+	if (fourthCard) {
+		descriptionProject[3].classList.add('view-description-mobile');
+	} else {
+		descriptionProject[3].classList.remove('view-description-mobile');
+	}
+	if (fifthCard) {
+		descriptionProject[4].classList.add('view-description-mobile');
+	} else {
+		descriptionProject[4].classList.remove('view-description-mobile');
+	}
+	if (sixthCard) {
+		descriptionProject[5].classList.add('view-description-mobile');
+	} else {
+		descriptionProject[5].classList.remove('view-description-mobile');
+	}
 }
 // ------------- //
 
