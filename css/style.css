@@ -114,6 +114,15 @@ header {
 	top: 2.1rem;
 	right: 1.5rem;
 }
+@media (min-width: 290px) {
+	.menu-button {
+		top: 1rem;
+		right: 1rem;
+		padding: 1rem;
+		border: 1px solid var(--primary-color);
+		border-radius: 50%;
+	}
+}
 @media (min-width: 768px) {
 	.menu-button {
 		display: none;
@@ -125,6 +134,7 @@ header {
 	margin-bottom: 0.4rem;
 	background-color: var(--primary-color);
 	transition: all 0.35s linear;
+	/* box-shadow: 0 0.2rem 2rem var(--white); */
 }
 .menu-button .menu-div.line-1.active {
 	transform: translateY(0.8rem) rotate(45deg);
@@ -740,7 +750,15 @@ a.curriculum-vitae-button p {
 }
 .my-knowledges .grid-technologies-container .grid-technology i {
 	font-size: 12rem;
+	transition: 1s;
 	/* background-color: var(--dark-grey); */
+}
+@media (min-width: 768px) {
+	.my-knowledges .grid-technologies-container .grid-technology i:hover {
+		color: var(--white);
+		text-shadow: 0 0.2rem 1.5rem var(--primary-color);
+		animation: spin 2s linear infinite;
+	}
 }
 .my-knowledges .grid-technologies-container .grid-technology p {
 	color: white;
@@ -763,6 +781,13 @@ a.curriculum-vitae-button p {
 	width: 18rem;
 	border-radius: 10rem;
 	padding: 2rem;
+	transition: 1s;
+}
+@media (min-width: 768px) {
+	.my-knowledges .flex-knowdlege-container .brain-loading-container img:hover {
+		animation: spin 1.5s linear infinite;
+		box-shadow: 0 0.2rem 1.5rem var(--primary-color);
+	}
 }
 .flex-knowdlege-container .brain-loading-container .loading-container {
 	display: flex;
@@ -887,10 +912,12 @@ a.curriculum-vitae-button p {
 		border-radius: 2rem;
 	}
 }
-.my-projects .grid-projects-container .grid-project .description-project.view-description-mobile {
-	opacity: 1;
-	background-color: var(--short-paragraph-color);
-	border-radius: 2rem;
+@media (min-width: 360px) and (max-width: 768px) {
+	.my-projects .grid-projects-container .grid-project .description-project.view-description-mobile {
+		opacity: 1;
+		background-color: var(--short-paragraph-color);
+		border-radius: 2rem;
+	}
 }
 .my-projects .grid-projects-container .grid-project .description-project p {
 	text-align: center;
@@ -962,6 +989,7 @@ a.curriculum-vitae-button p {
 	font-size: 1.8rem;
 	color: var(--dark-charcoal);
 	padding-left: 0.5rem;
+	margin-bottom: 7rem;
 }
 /* ###################### */
 

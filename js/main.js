@@ -28,7 +28,8 @@ const skillsDescription = $$('.skill-description');
 const linkImageContainer = $$('.img-link');
 const hoverImageParagraph = $$('.hover-image-paragraph');
 const descriptionProject = $$('.description-project');
-// const gridProject = $$('.grid-project');
+const gridProject = $$('.grid-project');
+const contactSection = $('.my-contact');
 // ------------- //
 
 // ################# //
@@ -102,44 +103,25 @@ for (let c = 0; c < linkImageContainer.length; c++) {
 }
 
 function projectsDescription(actualUbication) {
-	// const firstCard = gridProject[0].offsetTop >= actualUbication && gridProject[0].offsetTop <= gridProject[1].offsetTop;
-	const firstCard = actualUbication >= 5474 && actualUbication <= 5886;
-	const secondCard = actualUbication >= 5956 && actualUbication <= 6305;
-	const thirdCard = actualUbication >= 6339 && actualUbication <= 6689;
-	const fourthCard = actualUbication >= 6753 && actualUbication <= 7101;
-	const fifthCard = actualUbication >= 7137 && actualUbication <= 7494;
-	const sixthCard = actualUbication >= 7528 && actualUbication <= 7891;
+	// Esto no me conviene pq la página va cambiando de altura , aunque es mas linda la transición
+	// const firstCard = actualUbication >= 5474 && actualUbication <= 5886;
+	// const secondCard = actualUbication >= 5956 && actualUbication <= 6305;
+	// const thirdCard = actualUbication >= 6339 && actualUbication <= 6689;
+	// const fourthCard = actualUbication >= 6753 && actualUbication <= 7101;
+	// const fifthCard = actualUbication >= 7137 && actualUbication <= 7494;
+	// const sixthCard = actualUbication >= 7528 && actualUbication <= 7891;
+	const firstCard = gridProject[0].offsetTop >= actualUbication && gridProject[0].offsetTop <= gridProject[1].offsetTop;
+	const secondCard = gridProject[1].offsetTop >= actualUbication && gridProject[1].offsetTop <= gridProject[2].offsetTop;
+	const thirdCard = gridProject[2].offsetTop >= actualUbication && gridProject[2].offsetTop <= gridProject[3].offsetTop;
+	const fourthCard = gridProject[3].offsetTop >= actualUbication && gridProject[3].offsetTop <= gridProject[4].offsetTop;
+	const fifthCard = gridProject[4].offsetTop >= actualUbication && gridProject[4].offsetTop <= gridProject[5].offsetTop;
+	const sixthCard = gridProject[5].offsetTop >= actualUbication && gridProject[5].offsetTop <= contactSection.offsetTop;
 
-	// CODIGO TEMPORAL PORQUE NO SE ME OCURRE ALGO MÁS SIMPLIFICADO
-	if (firstCard) {
-		descriptionProject[0].classList.add('view-description-mobile');
-	} else {
-		descriptionProject[0].classList.remove('view-description-mobile');
-	}
-	if (secondCard) {
-		descriptionProject[1].classList.add('view-description-mobile');
-	} else {
-		descriptionProject[1].classList.remove('view-description-mobile');
-	}
-	if (thirdCard) {
-		descriptionProject[2].classList.add('view-description-mobile');
-	} else {
-		descriptionProject[2].classList.remove('view-description-mobile');
-	}
-	if (fourthCard) {
-		descriptionProject[3].classList.add('view-description-mobile');
-	} else {
-		descriptionProject[3].classList.remove('view-description-mobile');
-	}
-	if (fifthCard) {
-		descriptionProject[4].classList.add('view-description-mobile');
-	} else {
-		descriptionProject[4].classList.remove('view-description-mobile');
-	}
-	if (sixthCard) {
-		descriptionProject[5].classList.add('view-description-mobile');
-	} else {
-		descriptionProject[5].classList.remove('view-description-mobile');
+	const array = [firstCard, secondCard, thirdCard, fourthCard, fifthCard, sixthCard];
+	for (let n = 0; n < array.length; n++) {
+		array[n]
+			? descriptionProject[n].classList.add('view-description-mobile')
+			: descriptionProject[n].classList.remove('view-description-mobile');
 	}
 }
 // ------------- //
