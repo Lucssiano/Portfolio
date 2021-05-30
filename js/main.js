@@ -7,8 +7,6 @@ function $$(selector) {
 }
 // ################# //
 
-// ### VARIABLES ### //
-
 // --- Menú --- //
 const header = $('.header');
 const menuButton = $('.menu-button');
@@ -16,27 +14,7 @@ const lineMenuButton1 = $('.line-1');
 const lineMenuButton2 = $('.line-2');
 const lineMenuButton3 = $('.line-3');
 const ulLinksList = $('.ul-links-list');
-// ------------- //
 
-// --- Soft skills --- //
-const skillsHeader = $$('.skill-header');
-const skillsHeaderArrow = $$('.skill-header i');
-const skillsDescription = $$('.skill-description');
-// ------------- //
-
-// --- Project Cards --- //
-const linkImageContainer = $$('.img-link');
-const hoverImageParagraph = $$('.hover-image-paragraph');
-const descriptionProject = $$('.description-project');
-const gridProject = $$('.grid-project');
-const contactSection = $('.my-contact');
-// ------------- //
-
-// ################# //
-
-// ### FUNCIONES ### //
-
-// --- Menú --- //
 function menuDisplay() {
 	ulLinksList.classList.toggle('active');
 	lineMenuButton1.classList.toggle('active');
@@ -67,7 +45,6 @@ window.addEventListener('click', (e) => {
 let pageUbication = window.pageYOffset;
 window.onscroll = function () {
 	let actualUbication = window.pageYOffset;
-	// console.log(actualUbication);
 	if (pageUbication < actualUbication) {
 		$('.header').style.boxShadow = '2px 4.5px 4.5px -2px var(--primary-color)'; // #868686
 		// $('.header').style.borderBottom = '2px solid var(--little-grey)';
@@ -80,6 +57,10 @@ window.onscroll = function () {
 // ------------- //
 
 // --- Soft skills --- //
+const skillsHeader = $$('.skill-header');
+const skillsHeaderArrow = $$('.skill-header i');
+const skillsDescription = $$('.skill-description');
+
 for (let i = 0; i < skillsHeader.length; i++) {
 	skillsHeader[i].addEventListener('click', () => {
 		skillsDescription[i].classList.toggle('active');
@@ -91,6 +72,12 @@ for (let i = 0; i < skillsHeader.length; i++) {
 // ------------- //
 
 // --- Project Cards --- //
+const linkImageContainer = $$('.img-link');
+const hoverImageParagraph = $$('.hover-image-paragraph');
+const descriptionProject = $$('.description-project');
+const gridProject = $$('.grid-project');
+const contactSection = $('.my-contact');
+
 for (let c = 0; c < linkImageContainer.length; c++) {
 	linkImageContainer[c].addEventListener('mouseover', () => {
 		hoverImageParagraph[c].style.height = 0;
@@ -126,4 +113,69 @@ function projectsDescription(actualUbication) {
 }
 // ------------- //
 
+// --- Contact --- //
+// const charactersValidation = {
+// 	names: {
+// 		min: 2,
+// 		limit: 30,
+// 		val: false,
+// 	},
+// 	affairs: {
+// 		min: 5,
+// 		limit: 35,
+// 		val: false,
+// 	},
+// 	emails: {
+// 		emailCharacters: /^([da-z_.-]+)@([da-z.-]+).([a-z.]{2,6})$/,
+// 		val: false,
+// 	},
+// 	messages: {
+// 		min: 10,
+// 		limit: 250,
+// 		val: false,
+// 	},
+// };
+
+// const { names, affairs, emails, messages } = charactersValidation;
+
+// const nameInput = $('#name');
+// const affairInput = $('#affair');
+// const messageInput = $('#message');
+// const submitButton = $('.submit-button');
+// const formContainer = $('.contact-form-container');
+
+// nameInput.addEventListener('input', (e) => {
+// 	let texto = e.target.value;
+// 	// console.log(texto);
+// 	names.val = texto.length >= names.min && texto.length <= names.limit;
+// });
+
+
+// affairInput.addEventListener('input', (e) => {
+// 	let texto = e.target.value;
+// 	// console.log(texto);
+// 	affairs.val = texto.length >= affairs.min && texto.length <= affairs.limit;
+// });
+
+// messageInput.addEventListener('input', (e) => {
+// 	let texto = e.target.value;
+// 	// console.log(texto);
+// 	messages.val = texto.length >= messages.min && texto.length <= messages.limit;
+// });
+
+// submitButton.addEventListener('click', (e) => {
+// 	e.preventDefault();
+// 	if (messages.val && affairs.val && names.val) {
+// 		formContainer.submit();
+// 	} else if (messages.val === false) {
+// 		alert('The message has to be between 10 and 250 characters');
+// 	} else if (affairs.val === false) {
+// 		alert('The affair has to be between 5 and 35 characters');
+// 	} else if (names.val === false) {
+// 		// nameInput.innerHTML += `<br> <div style="color: black">La contraseña debe contener entre ${names.min} y ${names.limit} caracteres </div>`;
+// 		alert('The name has to be between 2 and 30 characters');
+// 	}
+// });
+
+// ------------- //
 // ################# //

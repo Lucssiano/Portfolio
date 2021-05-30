@@ -757,7 +757,7 @@ a.curriculum-vitae-button p {
 	.my-knowledges .grid-technologies-container .grid-technology i:hover {
 		color: var(--white);
 		text-shadow: 0 0.2rem 1.5rem var(--primary-color);
-		animation: spin 2s linear infinite;
+		animation: beat 0.5s alternate infinite ease-in;
 	}
 }
 .my-knowledges .grid-technologies-container .grid-technology p {
@@ -993,6 +993,64 @@ a.curriculum-vitae-button p {
 }
 /* ###################### */
 
+/* ### PROJECTS ### */
+.my-contact {
+	border-bottom: 0.7rem solid var(--little-grey);
+	padding: 2rem;
+	background-color: var(--black);
+}
+.my-contact h2 {
+	color: var(--white);
+	-webkit-text-stroke: 0.275rem var(--black);
+	padding: 4rem 0 6rem 0;
+}
+.my-contact .flex-contact-container {
+	display: flex;
+	flex-direction: column;
+}
+.my-contact .flex-contact-container form.contact-form-container {
+	background-color: var(--white);
+	color: var(--black);
+	border-radius: 1.5rem;
+	padding: 2rem;
+	box-shadow: 0 0 0.5rem var(--little-white);
+}
+.my-contact .flex-contact-container form.contact-form-container h3 {
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 3rem;
+	letter-spacing: 0.2rem;
+	background-color: var(--primary-color);
+}
+.my-contact .flex-contact-container form.contact-form-container h4 {
+	color: var(--dark-grey);
+}
+.my-contact .flex-contact-container form.contact-form-container input,
+.my-contact .flex-contact-container form.contact-form-container textarea {
+	margin: 1rem 0 2rem 0;
+	padding: 0.5rem;
+	width: 100%;
+	border: 0.2rem solid var(--dark-grey);
+}
+.my-contact .flex-contact-container form.contact-form-container input:focus,
+.my-contact .flex-contact-container form.contact-form-container textarea:focus {
+	border: 0.2rem solid var(--primary-color);
+}
+.my-contact .flex-contact-container form.contact-form-container textarea {
+	resize: vertical;
+}
+.my-contact .flex-contact-container form.contact-form-container button{
+	width: 100%;
+	text-align: center;
+	padding: 1rem;
+	font-weight: 700;
+	border: 0.2rem solid var(--dark-grey);
+	background-color: var(--primary-color);
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+}
+
+/* ###################### */
 /* 
 PORTFOLIO:
 1- Mejorar la mezcla de colores
