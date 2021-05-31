@@ -42,7 +42,7 @@
                 </li>
             </ul>
         </nav>
-    </header> <!-- Header -->
+    </header> <!-- Header of the portfolio -->
 
     <main class="main-content" id="home">
         <div class="decorative-name-line left">
@@ -413,32 +413,51 @@
     <section class="my-contact" id="contact-section">
         <h2 class="title"><span>Contact</h2>
         <div class="flex-contact-container">
-            <form action="https://formspree.io/f/xleabbop" method="POST" class="contact-form-container">
-                <h3>Get in touch</h3>
-                <label for="name">
-                    <h4>Name:</h4>
-                    <input type="text" name="name" id="name" placeholder="Enter your name *" required>
-                </label>
-                <label for="email">
-                    <h4>Email:</h4>
-                    <input type="email" name="email" id="email" placeholder="Enter your email *" required>
-                </label>
-                <label for="affair">
-                    <h4>Affair:</h4>
-                    <input type="text" name="_subject" id="affair" placeholder="Enter the affair *" required>
-                </label>
-                <label for="message">
-                    <h4>Message:</h4>
-                    <textarea type="text" name="message" id="message" placeholder="Enter your message *"
-                        required></textarea>
-                </label>
-                <button class="submit-button">Send</button>
-            </form>
+            <div class="form-flex-container">
+                <form action="https://formspree.io/f/xleabbop" method="POST" class="contact-form-container">
+                    <h3>Get in touch</h3>
+                    <label for="name">
+                        <h4>Name:</h4>
+                        <input type="text" name="name" id="name" placeholder="Enter your name *" required>
+                    </label>
+                    <label for="email">
+                        <h4>Email:</h4>
+                        <input type="email" name="email" id="email" placeholder="Enter your email *" required>
+                    </label>
+                    <label for="affair">
+                        <h4>Affair:</h4>
+                        <input type="text" name="_subject" id="affair" placeholder="Enter the affair *" required>
+                    </label>
+                    <label for="message">
+                        <h4>Message:</h4>
+                        <textarea type="text" name="message" id="message" placeholder="Enter your message *"
+                            required></textarea>
+                    </label>
+                    <button class="submit-button">Send</button>
+                    <!-- Mejorar el formulario -->
+                </form>
+                <p>Tell me your opinion about my portfolio or send me your proposal. I will answer soon.</p>
+            </div>
             <div class="chat-with-me">
-
+                <h3>Chat with Lucho's "bot"</h3>
+                <i class='bx bx-right-arrow-alt'></i>
+                <div class="bot-icon-container">
+                    <i class='bx bxs-chat'></i>
+                </div>
+                <i class='bx bx-left-arrow-alt'></i>
+                <!-- Acá va el chat con el bot , que todavía no está -->
             </div>
         </div>
-    </section>
+    </section> <!-- Contact section of the portfolio -->
+
+    <section class="appreciation-section">
+        <h4>Thank you for visiting my portfolio</h4>
+    </section> <!-- Appreciation section of the portfolio -->
+
+    <footer class="footer-container">
+
+    </footer> <!-- Footer of the portfolio -->
+
     <script src="js/main.js"></script>
 </body>
 

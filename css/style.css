@@ -119,7 +119,8 @@ header {
 		top: 1rem;
 		right: 1rem;
 		padding: 1rem;
-		border: 1px solid var(--primary-color);
+		/* border: 1px solid var(--primary-color); */
+		background-color: var(--dark-graphite);
 		border-radius: 50%;
 	}
 }
@@ -995,7 +996,7 @@ a.curriculum-vitae-button p {
 
 /* ### PROJECTS ### */
 .my-contact {
-	border-bottom: 0.7rem solid var(--little-grey);
+	/* border-bottom: 0.7rem solid var(--little-grey); */
 	padding: 2rem;
 	background-color: var(--black);
 }
@@ -1004,9 +1005,17 @@ a.curriculum-vitae-button p {
 	-webkit-text-stroke: 0.275rem var(--black);
 	padding: 4rem 0 6rem 0;
 }
-.my-contact .flex-contact-container {
+.my-contact .flex-contact-container , .my-contact .flex-contact-container .form-flex-container{
 	display: flex;
 	flex-direction: column;
+	align-items: center;
+}
+@media (min-width: 658px) {
+	.my-contact .flex-contact-container {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
 }
 .my-contact .flex-contact-container form.contact-form-container {
 	background-color: var(--white);
@@ -1039,16 +1048,109 @@ a.curriculum-vitae-button p {
 .my-contact .flex-contact-container form.contact-form-container textarea {
 	resize: vertical;
 }
-.my-contact .flex-contact-container form.contact-form-container button{
+.my-contact .flex-contact-container form.contact-form-container button {
 	width: 100%;
 	text-align: center;
 	padding: 1rem;
 	font-weight: 700;
-	border: 0.2rem solid var(--dark-grey);
+	box-shadow: 0 0 0.4rem var(--black);
+	border: none;
 	background-color: var(--primary-color);
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
+	transition: all 1s;
 }
+@media (min-width: 768px) {
+	.my-contact .flex-contact-container form.contact-form-container button:hover {
+		background-color: var(--dark-grey);
+		color: var(--primary-color);
+		cursor: pointer;
+	}
+}
+.my-contact .flex-contact-container .form-flex-container p {
+	color: var(--primary-color);
+	max-width: 31.773rem;
+	padding: 2rem;
+	line-height: 2.5rem;
+}
+.my-contact .flex-contact-container .chat-with-me {
+	padding: 5rem 0;
+	text-align: center;
+}
+@media (min-width: 658px) {
+	.my-contact .flex-contact-container .chat-with-me {
+		padding: 0 5rem;
+	}
+}
+.my-contact .flex-contact-container .chat-with-me h3 {
+	color: var(--primary-color);
+	text-transform: uppercase;
+	line-height: 2.5rem;
+}
+.my-contact .flex-contact-container .chat-with-me i {
+	font-size: 3rem;
+}
+@keyframes to-right {
+	0% {
+		transform: translateX(-4rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+@keyframes to-left {
+	0% {
+		transform: translateX(4rem);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+.my-contact .flex-contact-container .chat-with-me i.bx-right-arrow-alt {
+	animation: to-right 0.6s alternate infinite ease-in;
+}
+.my-contact .flex-contact-container .chat-with-me i.bx-left-arrow-alt {
+	animation: to-left 0.6s alternate infinite ease-in;
+}
+.my-contact .flex-contact-container .chat-with-me .bot-icon-container {
+	margin: 2rem 0;
+	border-radius: 50%;
+	background-color: var(--dark-charcoal);
+	box-shadow: 0 0 0.8rem var(--white);
+	padding: 1.5rem;
+	display: inline-block;
+	transition: all 1s;
+}
+@media (min-width: 768px) {
+	.my-contact .flex-contact-container .chat-with-me .bot-icon-container:hover {
+		box-shadow: 0 0 0.8rem var(--primary-color);
+		transform: scale(1.02);
+		cursor: pointer;
+	}
+}
+@media (min-width: 768px) {
+	.my-contact .flex-contact-container .chat-with-me .bot-icon-container:hover {
+		background-color: var(--dark-grey);
+	}
+}
+/* ###################### */
+
+/* ### APPRECIATION SECTION OF THE PORTFOLIO ### */
+.appreciation-section {
+	background-color: var(--dark-charcoal);
+	padding: 3rem;
+	text-align: center;
+}
+.appreciation-section h4 {
+	color: var(--white);
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	line-height: 3rem;
+}
+
+/* ###################### */
+
+/* ###################### */
 
 /* ###################### */
 /* 
