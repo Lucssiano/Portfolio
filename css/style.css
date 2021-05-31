@@ -1072,6 +1072,7 @@ a.curriculum-vitae-button p {
 	max-width: 31.773rem;
 	padding: 2rem;
 	line-height: 2.5rem;
+	text-align: center;
 }
 .my-contact .flex-contact-container .chat-with-me {
 	padding: 5rem 0;
