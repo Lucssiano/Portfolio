@@ -35,6 +35,7 @@ h2.title {
 	font-size: 3.8rem;
 	font-weight: 800;
 	text-align: center;
+	padding: 6rem 0 5rem 0;
 }
 @media (min-width: 330px) {
 	h2.title {
@@ -49,6 +50,11 @@ h2.title {
 @media (min-width: 468px) {
 	h2.title {
 		font-size: 6.5rem;
+	}
+}
+@media (min-width: 768px) {
+	h2.title {
+		padding: 8rem 0;
 	}
 }
 .symbol {
@@ -206,22 +212,10 @@ ul.ul-links-list li > a {
 	}
 }
 ul.ul-links-list li a.active {
-	/* Para que se haga más fuerte la palabra cuando se encuentra en una sección de la pág (hacerlo en js automático) */
+	/* Para que se haga más fuerte la palabra cuando se encuentra en una sección de la pág */
 	font-weight: 800;
+	color: var(--primary-color);
 }
-/* ¿Cómo podría poner un punto sin que sea mucho quilombo como con el ejemplo del portfolio? */
-/* @media (min-width: 768px) {
-	ul.ul-links-list li a.active::after {
-		position: absolute;
-		left: 39%;
-		bottom: 15%;
-		content: '';
-		width: 0.8rem;
-		height: 0.8rem;
-		border-radius: 50%;
-		background: var(--primary-color);
-	}
-} */
 /* ###################### */
 
 /* ### MAIN CONTENT ### */
@@ -412,7 +406,7 @@ ul.ul-links-list li a.active {
 .about-me {
 	background-color: var(--white);
 	border-bottom: 0.7rem solid var(--little-grey);
-	padding: 2rem;
+	padding: 2rem 2rem 10rem 2rem;
 	/* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
 	/* background-color: var(--little-grey); */
 	/* background-image: url(/img/cool-background.png); */
@@ -423,7 +417,6 @@ ul.ul-links-list li a.active {
 }
 .about-me h2 {
 	color: var(--black);
-	padding: 4rem 0 3rem 0;
 }
 .about-me h2 span {
 	-webkit-text-stroke: 0.275rem var(--black);
@@ -575,9 +568,6 @@ a.curriculum-vitae-button p {
 .my-languages-container .progress-bar-container span.progress-bar-color.english {
 	width: 80%;
 }
-/* .my-languages-container .improving-paragraph {
-	padding-bottom: 2.5rem;
-} */
 /* ------------- */
 /* --- SOFT SKILLS --- */
 .soft-skills-container {
@@ -663,13 +653,12 @@ a.curriculum-vitae-button p {
 
 /* ### KNOWLEDGES ### */
 .my-knowledges {
-	padding: 2rem;
+	padding: 2rem 2rem 10rem 2rem;
 	background-color: var(--dark-grey);
 	border-bottom: 0.7rem solid var(--little-grey);
 }
 .my-knowledges h2 {
 	color: var(--white);
-	padding: 4rem 0 5rem 0;
 	-webkit-text-stroke: 0.275rem var(--black);
 }
 .my-knowledges h2 span {
@@ -812,14 +801,13 @@ a.curriculum-vitae-button p {
 /* ### PROJECTS ### */
 .my-projects {
 	border-bottom: 0.7rem solid var(--little-grey);
-	padding: 2rem;
+	padding: 2rem 2rem 10rem 2rem;
 	background-color: var(--primary-color);
 	/* background-color: #ff9600; */
 }
 .my-projects h2 {
 	color: var(--dark-charcoal);
 	-webkit-text-stroke: 0.275rem var(--black);
-	padding: 4rem 0 6rem 0;
 }
 .my-projects h2 span {
 	color: var(--white);
@@ -990,20 +978,18 @@ a.curriculum-vitae-button p {
 	font-size: 1.8rem;
 	color: var(--dark-charcoal);
 	padding-left: 0.5rem;
-	margin-bottom: 7rem;
 }
 /* ###################### */
 
-/* ### PROJECTS ### */
+/* ### CONTACT ### */
 .my-contact {
 	/* border-bottom: 0.7rem solid var(--little-grey); */
-	padding: 2rem;
+	padding: 2rem 2rem 5rem 2rem;
 	background-color: var(--black);
 }
 .my-contact h2 {
 	color: var(--white);
 	-webkit-text-stroke: 0.275rem var(--black);
-	padding: 4rem 0 6rem 0;
 }
 .my-contact .flex-contact-container,
 .my-contact .flex-contact-container .form-flex-container {
@@ -1087,6 +1073,7 @@ a.curriculum-vitae-button p {
 .my-contact img.businessman-image {
 	padding: 2rem;
 	background-color: var(--dark-charcoal);
+	box-shadow: 0 0 0.8rem var(--white);
 	border-radius: 10rem;
 	align-self: center;
 	width: 14rem;
@@ -1142,10 +1129,6 @@ a.curriculum-vitae-button p {
 		box-shadow: 0 0 0.8rem var(--primary-color);
 		transform: scale(1.02);
 		cursor: pointer;
-	}
-}
-@media (min-width: 768px) {
-	.my-contact .flex-contact-container .chat-with-me .bot-icon-container:hover {
 		background-color: var(--dark-grey);
 	}
 }
@@ -1220,10 +1203,39 @@ footer.footer-container .nav-links-footer .ul-links-list-footer a {
 }
 /* ###################### */
 
+/* ### ARROW TO GO TO THE TOP OF THE PAGE ### */
+.arrow-container {
+	/* display: none; */
+	opacity: 0.8;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	border-radius: 50%;
+	border: 0.1rem solid var(--light-grey);
+	background-color: var(--dark-charcoal);
+	transition: 1s;
+}
+/* .arrow-container.active {
+	display: block;
+} */
+@media (min-width: 768px) {
+	.arrow-container:hover {
+		opacity: 1;
+		background-color: var(--black);
+	}
+}
+.arrow-container i.arrow-icon {
+	color: var(--primary-color);
+	font-size: 5rem;
+}
+
+/* ###################### */
+
 /* 
 PORTFOLIO:
 1- Mejorar la mezcla de colores
 2- Mejorar la transición de las Soft Skills
 3- Cambiar algunos parrafos por h3 o h4 
+4- Agregar la flecha para subir arriba del todo de la página
 */
 /* ###################### */

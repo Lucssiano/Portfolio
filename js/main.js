@@ -53,7 +53,34 @@ window.onscroll = function () {
 		// $('.header').style.borderBottom = 'none';
 	}
 	projectsDescription(actualUbication);
+	paintedLink(actualUbication);
+	// toUpArrowDisplay(actualUbication);
 };
+
+const listLinks = $$('.list-link');
+const scrollDownSection = $('.scroll-down-container');
+// Tuve que poner secciones más especificas porque no me tomaba bien el cambio
+const softSkillsSymbol = $('.soft-skills-container .final-symbol');
+// const myKnowledgesSection = $('.my-knowledges');
+const flexKnowledgeContainer = $('.flex-knowdlege-container');
+// const myProjectSection = $('.my-projects');
+const projectParagraphImproving = $('.project-p-improving');
+// const myContactSection = $('.my-contact');
+const appreciationSection = $('.appreciation-section');
+
+function paintedLink(actualUbication) {
+	const home = actualUbication <= scrollDownSection.offsetTop;
+	const aboutMe = actualUbication >= scrollDownSection.offsetTop && actualUbication < softSkillsSymbol.offsetTop;
+	const knowledges = actualUbication >= softSkillsSymbol.offsetTop && actualUbication < flexKnowledgeContainer.offsetTop;
+	const projects =
+		actualUbication > flexKnowledgeContainer.offsetTop && actualUbication < projectParagraphImproving.offsetTop;
+	const contact = actualUbication >= projectParagraphImproving.offsetTop && actualUbication < appreciationSection.offsetTop;
+
+	const arrayLinks = [home, aboutMe, knowledges, projects, contact];
+	for (let l = 0; l < arrayLinks.length; l++) {
+		arrayLinks[l] ? listLinks[l].classList.add('active') : listLinks[l].classList.remove('active');
+	}
+}
 // ------------- //
 
 // --- Soft skills --- //
@@ -104,13 +131,20 @@ function projectsDescription(actualUbication) {
 	const fifthCard = gridProject[4].offsetTop >= actualUbication && gridProject[4].offsetTop <= gridProject[5].offsetTop;
 	const sixthCard = gridProject[5].offsetTop >= actualUbication && gridProject[5].offsetTop <= contactSection.offsetTop;
 
-	const array = [firstCard, secondCard, thirdCard, fourthCard, fifthCard, sixthCard];
-	for (let n = 0; n < array.length; n++) {
-		array[n]
+	const arrayCards = [firstCard, secondCard, thirdCard, fourthCard, fifthCard, sixthCard];
+	for (let n = 0; n < arrayCards.length; n++) {
+		arrayCards[n]
 			? descriptionProject[n].classList.add('view-description-mobile')
 			: descriptionProject[n].classList.remove('view-description-mobile');
 	}
 }
+// ------------- //
+
+// --- Arrow to go to the top of the page --- //
+// const toUpArrow = $('.arrow-container');
+// function toUpArrowDisplay(actualUbication) {
+// 	actualUbication >= scrollDownSection.offsetTop ? toUpArrow.classList.add('active') : toUpArrow.classList.remove('active');
+// }
 // ------------- //
 
 // --- Contact --- //
@@ -149,7 +183,6 @@ function projectsDescription(actualUbication) {
 // 	// console.log(texto);
 // 	names.val = texto.length >= names.min && texto.length <= names.limit;
 // });
-
 
 // affairInput.addEventListener('input', (e) => {
 // 	let texto = e.target.value;
