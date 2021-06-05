@@ -140,6 +140,28 @@ function projectsDescription(actualUbication) {
 }
 // ------------- //
 
+// --- Bot chat --- //
+const botIconContainer = $('.bot-icon-container');
+const botChatContainer = $('.bot-chat');
+const closeBotChat = $('.exit-bot-container');
+const mediaqueryList = window.matchMedia('(min-width: 768px)');
+
+botIconContainer.addEventListener('click', () => {
+	botChatContainer.style.width = '100%';
+	botChatContainer.style.height = '100%';
+	if (mediaqueryList.matches) {
+		botChatContainer.style.width = '25%';
+		botChatContainer.style.height = '75%';
+		// Provisorio
+	}
+});
+
+closeBotChat.addEventListener('click', () => {
+	botChatContainer.style.width = 0;
+	botChatContainer.style.height = 0;
+});
+// ------------- //
+
 // --- Arrow to go to the top of the page --- //
 // const toUpArrow = $('.arrow-container');
 // function toUpArrowDisplay(actualUbication) {

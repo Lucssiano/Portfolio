@@ -1119,6 +1119,7 @@ a.curriculum-vitae-button p {
 	margin: 2rem 0;
 	border-radius: 50%;
 	background-color: var(--dark-charcoal);
+	border: none;
 	box-shadow: 0 0 0.8rem var(--white);
 	padding: 1.5rem;
 	display: inline-block;
@@ -1131,6 +1132,120 @@ a.curriculum-vitae-button p {
 		cursor: pointer;
 		background-color: var(--dark-grey);
 	}
+}
+/* ###################### */
+
+/* ### BOT CHAT ### */
+.bot-chat {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 999999999999999;
+	width: 0;
+	height: 0;
+	background-color: var(--dark-charcoal);
+	transition: 1s;
+}
+/* @media (min-width: 768px) {
+	.bot-chat {
+		width: 50%;
+		height: 100%;
+	}
+} */
+.bot-chat .bot-presentation-container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--black);
+	padding: 1rem;
+}
+.bot-chat .bot-presentation-container .bot-description {
+	display: flex;
+	align-items: center;
+}
+.bot-chat .bot-presentation-container .bot-description .bot-img-container {
+	padding: 1rem;
+}
+.bot-chat .bot-presentation-container .bot-description .bot-presentation h3 {
+	color: var(--white);
+	font-size: 1.8rem;
+}
+.bot-chat .bot-presentation-container .bot-description .bot-presentation h4 {
+	padding: 0.4rem 0;
+	color: var(--dark-charcoal);
+}
+.bot-chat .bot-presentation-container .bot-description .bot-img-container img {
+	border-radius: 50%;
+	width: 5rem;
+	border: 0.2rem solid var(--white);
+}
+.bot-chat .bot-presentation-container .exit-bot-container {
+	padding: 0.5rem;
+	background-color: var(--dark-grey);
+	border: none;
+	box-shadow: 0 0 0.5rem var(--white);
+	border-radius: 50%;
+	transition: 0.5s;
+}
+@media (min-width: 768px) {
+	.bot-chat .bot-presentation-container .exit-bot-container:hover {
+		background-color: var(--dark-charcoal);
+		cursor: pointer;
+	}
+}
+.bot-chat .bot-presentation-container .exit-bot-container i {
+	font-size: 3rem;
+}
+.bot-chat .bot-messages-container {
+	width: 100%;
+	height: 100%;
+	padding: 2rem;
+	/* position: absolute; */
+}
+.bot-chat .bot-messages-container .bot-message {
+	/* width: 100%; */
+	position: relative;
+	background-color: var(--white);
+	padding: 1rem;
+	margin: 1rem 0;
+	border-radius: 1rem;
+}
+.bot-chat .bot-messages-container .bot-message::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -1.2rem;
+	border-left: 1rem solid transparent;
+	border-bottom: 1rem solid transparent;
+	border-right: 1rem solid var(--white);
+	border-top: 1rem solid var(--white);
+}
+.bot-chat .bot-messages-container .bot-message p {
+	line-height: 2rem;
+}
+.bot-messages-container .possible-answers-container {
+	margin: 2rem 0;
+}
+.bot-messages-container .possible-answers-container .answer {
+	padding: 1rem;
+	margin: 0.5rem 0;
+	background-color: var(--dark-grey);
+	color: var(--primary-color);
+	border: none;
+	text-align: left;
+	width: 100%;
+	/* box-shadow: 0 0 0.5rem var(--white); */
+	border-radius: 1rem;
+}
+@media (min-width: 768px) {
+	.bot-messages-container .possible-answers-container .answer:hover {
+		background-color: var(--black);
+		cursor: pointer;
+	}
+}
+.bot-messages-container .possible-answers-container .answer p {
+	font-size: 1.4rem;
 }
 /* ###################### */
 
@@ -1236,6 +1351,7 @@ PORTFOLIO:
 1- Mejorar la mezcla de colores
 2- Mejorar la transición de las Soft Skills
 3- Cambiar algunos parrafos por h3 o h4 
-4- Agregar la flecha para subir arriba del todo de la página
+4- Ver si puedo mejorar el css (simplificarlo un poco)
+5- Poner las soft skills como botones
 */
 /* ###################### */
