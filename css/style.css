@@ -1202,6 +1202,7 @@ a.curriculum-vitae-button p {
 	width: 100%;
 	height: 100%;
 	padding: 2rem;
+	/* overflow-y: scroll; */
 	/* position: absolute; */
 }
 .bot-chat .bot-messages-container .bot-message,
@@ -1279,6 +1280,15 @@ a.curriculum-vitae-button p {
 }
 .bot-contact-answer p span {
 	font-weight: 800;
+}
+.display-none {
+	display: none;
+}
+.display-block {
+	display: block;
+}
+.display-flex {
+	display: flex;
 }
 /* ###################### */
 

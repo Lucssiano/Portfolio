@@ -146,6 +146,7 @@ const botChatContainer = $('.bot-chat');
 const closeBotChat = $('.exit-bot-container');
 const mediaqueryList = window.matchMedia('(min-width: 768px)');
 const botMessagesContainer = $('.bot-messages-container');
+const botMessages = $$('.bot-message');
 const possibleAnswersContainer = $('.possible-answers-container');
 const possibleAnswers = $$('.possible-answer');
 const userAnswer = $$('.user-answer');
@@ -165,23 +166,31 @@ const botContactSection = $('.contact-bot-section');
 const userContactAnswer = $('.user-contact-answer');
 const botContactAnswersContainer = $('.bot-contact-answers');
 const botContactAnswer = $$('.bot-contact-answer');
-// const botContactAnswerLink = $('.bot-contact-answer a.link-contact-bot');
+const botContactAnswerLink = $('.bot-contact-answer a.link-contact-bot');
 // $$$$$$$$$$$$$$$ //
 
 // $$$ Hire answer $$$ //
-const botHireSection = $('.hire-bot-section');
-
-const userHireAnswer = $('.user-hire-answer');
-const botHireAnswersContainer = $('.bot-hire-answers');
-const botHireAnswer = $$('.bot-hire-answer');
 // $$$$$$$$$$$$$$$ //
 
 botIconContainer.addEventListener('click', () => {
-	botChatContainer.style.width = '100%';
-	botChatContainer.style.height = '100%';
-	if (mediaqueryList.matches) {
+	if (!mediaqueryList.matches) {
+		botChatContainer.style.width = '100%';
+		botChatContainer.style.height = '100%';
+	} else {
 		botChatContainer.style.width = '25%';
 		botChatContainer.style.height = '75%';
+	}
+	for (let b = 0; b < botMessages.length; b++) {
+		botMessages[b].style.display = 'none';
+		setTimeout(() => {
+			botMessages[b].style.display = 'block';
+		}, (b + 1) * 1500);
+	}
+	for (let a = 0; a < possibleAnswers.length; a++) {
+		possibleAnswers[a].style.display = 'none';
+		setTimeout(() => {
+			possibleAnswers[a].style.display = 'block';
+		}, 6000);
 	}
 });
 
@@ -190,28 +199,20 @@ function closeBot() {
 	botChatContainer.style.height = 0;
 	botHelloSection.style.display = 'none';
 	botContactSection.style.display = 'none';
-	botHireSection.style.display = 'none';
-	botHelloAnswer.forEach(element => {
+	botHelloAnswer.forEach((element) => {
 		element.style.display = 'none';
 	});
-	botContactAnswer.forEach(element => {
+	botContactAnswer.forEach((element) => {
 		element.style.display = 'none';
 	});
-	botHireAnswer.forEach(element => {
-		element.style.display = 'none';
-	});
-	for (let a = 0; a < possibleAnswers.length; a++) {
-		possibleAnswers[a].style.display = 'block';
-	}
 }
 
 closeBotChat.addEventListener('click', () => {
 	closeBot();
 });
-
-// botContactAnswerLink.addEventListener('click', () => {
-// 	closeBot();
-// });
+botContactAnswerLink.addEventListener('click', () => {
+	closeBot();
+});
 
 for (let a = 0; a < possibleAnswers.length; a++) {
 	possibleAnswers[a].addEventListener('click', () => {
@@ -220,50 +221,42 @@ for (let a = 0; a < possibleAnswers.length; a++) {
 		});
 		switch (possibleAnswers[a]) {
 			case possibleAnswers[0]:
+				botContactSection.style.display = 'none';
+				userContactAnswer.style.display = 'none';
 				botHelloSection.style.display = 'block';
-                userHelloAnswer.style.display = 'flex';
+				userHelloAnswer.style.display = 'flex';
 				for (let b = 0; b < botHelloAnswer.length; b++) {
+					botHelloAnswer[b].style.display = 'none';
 					setTimeout(() => {
 						botHelloAnswer[b].style.display = 'block';
 					}, (b + 1) * 1500);
 				}
 				setTimeout(() => {
 					possibleAnswers[1].style.display = 'block';
-					possibleAnswers[2].style.display = 'block';
 				}, 7500);
 				break;
 
 			case possibleAnswers[1]:
+				botHelloSection.style.display = 'none';
+				userHelloAnswer.style.display = 'none';
 				botContactSection.style.display = 'block';
-                userContactAnswer.style.display = 'flex';
+				userContactAnswer.style.display = 'flex';
 				for (let b = 0; b < botContactAnswer.length; b++) {
+					botContactAnswer[b].style.display = 'none';
 					setTimeout(() => {
 						botContactAnswer[b].style.display = 'block';
 					}, (b + 1) * 1500);
 				}
 				setTimeout(() => {
 					possibleAnswers[0].style.display = 'block';
-					possibleAnswers[2].style.display = 'block';
-				}, 7500);
-				break;
-
-			case possibleAnswers[2]:
-				botHireSection.style.display = 'block';
-                userHireAnswer.style.display = 'flex';
-				for (let b = 0; b < botHireAnswer.length; b++) {
-					setTimeout(() => {
-						botHireAnswer[b].style.display = 'block';
-					}, (b + 1) * 1500);
-				}
-				setTimeout(() => {
-					possibleAnswers[0].style.display = 'block';
-					possibleAnswers[1].style.display = 'block';
 				}, 7500);
 				break;
 		}
 	});
 }
 
+// El codigo de ahora funciona pero no es tan lindo, ver si se puede mejorar , no usar codigo repetido y reutilizarlo
+// Manejarse con clases y no con style.display
 // Probar de poner todas las botAnswer en una seccion del html y depende de la respuesta que se ponga se genera el html debajo de todo.
 
 // ------------- //
