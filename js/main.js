@@ -145,6 +145,24 @@ const botIconContainer = $('.bot-icon-container');
 const botChatContainer = $('.bot-chat');
 const closeBotChat = $('.exit-bot-container');
 const mediaqueryList = window.matchMedia('(min-width: 768px)');
+const botMessagesContainer = $('.bot-messages-container');
+const possibleAnswersContainer = $('.possible-answers-container');
+const possibleAnswers = $$('.possible-answer');
+const userAnswer = $$('.user-answer');
+const botAnswersContainer = $$('.bot-answers');
+
+// $$$ Hello answer $$$ //
+const userHelloAnswer = $('.user-hello-answer');
+const botHelloAnswersContainer = $('.bot-hello-answers');
+const botHelloAnswer = $$('.bot-hello-answer');
+// $$$$$$$$$$$$$$$ //
+
+// $$$ Contact answer $$$ //
+const userContactAnswer = $('.user-contact-answer');
+const botContactAnswersContainer = $('.bot-contact-answers');
+const botContactAnswer = $$('.bot-contact-answer');
+const botContactAnswerLink = $('.bot-contact-answer a.link-contact-bot');
+// $$$$$$$$$$$$$$$ //
 
 botIconContainer.addEventListener('click', () => {
 	botChatContainer.style.width = '100%';
@@ -152,16 +170,79 @@ botIconContainer.addEventListener('click', () => {
 	if (mediaqueryList.matches) {
 		botChatContainer.style.width = '25%';
 		botChatContainer.style.height = '75%';
-		// Provisorio
 	}
 });
 
-closeBotChat.addEventListener('click', () => {
+function closeBot() {
 	botChatContainer.style.width = 0;
 	botChatContainer.style.height = 0;
-});
-// ------------- //
+	for (let a = 0; a < possibleAnswers.length; a++) {
+		possibleAnswers[a].style.display = 'block';
+	}
+	userHelloAnswer.style.display = 'none';
+	botHelloAnswersContainer.style.display = 'none';
+	userContactAnswer.style.display = 'none';
+	botContactAnswersContainer.style.display = 'none';
+}
 
+closeBotChat.addEventListener('click', () => {
+	closeBot();
+});
+
+// botContactAnswerLink.addEventListener('click', () => {
+// 	closeBot();
+// });
+
+for (let a = 0; a < possibleAnswers.length; a++) {
+	possibleAnswers[a].addEventListener('click', () => {
+		possibleAnswers.forEach((ans) => {
+			ans.style.display = 'none';
+		});
+		switch (possibleAnswers[a]) {
+			case possibleAnswers[0]:
+				userContactAnswer.style.display = 'none';
+				botContactAnswersContainer.style.display = 'none';
+				botHelloAnswersContainer.style.display = 'block';
+				userHelloAnswer.style.display = 'flex';
+				for (let b = 0; b < botHelloAnswer.length; b++) {
+					setTimeout(() => {
+						botHelloAnswer[b].style.display = 'block';
+					}, (b + 1) * 1500);
+				}
+				setTimeout(() => {
+					possibleAnswers[1].style.display = 'block';
+					possibleAnswers[2].style.display = 'block';
+				}, 7500);
+				break;
+
+			case possibleAnswers[1]:
+				userHelloAnswer.style.display = 'none';
+				botHelloAnswersContainer.style.display = 'none';
+				botContactAnswersContainer.style.display = 'block';
+				userContactAnswer.style.display = 'flex';
+				for (let b = 0; b < botContactAnswer.length; b++) {
+					setTimeout(() => {
+						botContactAnswer[b].style.display = 'block';
+					}, (b + 1) * 1500);
+				}
+				setTimeout(() => {
+					possibleAnswers[0].style.display = 'block';
+					possibleAnswers[2].style.display = 'block';
+				}, 7500);
+				break;
+
+			case possibleAnswers[2]:
+				// Poner acá lo del contacto , falta declarar las variables y poner todo
+				setTimeout(() => {
+					possibleAnswers[0].style.display = 'block';
+					possibleAnswers[1].style.display = 'block';
+				}, 7500);
+				break;
+		}
+	});
+}
+
+// ------------- //
 // --- Arrow to go to the top of the page --- //
 // const toUpArrow = $('.arrow-container');
 // function toUpArrowDisplay(actualUbication) {

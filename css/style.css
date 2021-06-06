@@ -1145,13 +1145,14 @@ a.curriculum-vitae-button p {
 	height: 0;
 	background-color: var(--dark-charcoal);
 	transition: 1s;
+	overflow-y: scroll;
 }
-/* @media (min-width: 768px) {
+@media (min-width: 768px) {
 	.bot-chat {
-		width: 50%;
-		height: 100%;
+		bottom: 7rem;
+		right: 1rem;
 	}
-} */
+}
 .bot-chat .bot-presentation-container {
 	display: flex;
 	flex-flow: row nowrap;
@@ -1203,7 +1204,8 @@ a.curriculum-vitae-button p {
 	padding: 2rem;
 	/* position: absolute; */
 }
-.bot-chat .bot-messages-container .bot-message {
+.bot-chat .bot-messages-container .bot-message,
+.bot-chat .bot-messages-container .bot-answer {
 	/* width: 100%; */
 	position: relative;
 	background-color: var(--white);
@@ -1211,7 +1213,11 @@ a.curriculum-vitae-button p {
 	margin: 1rem 0;
 	border-radius: 1rem;
 }
-.bot-chat .bot-messages-container .bot-message::before {
+.bot-chat .bot-messages-container .bot-answer {
+	display: none;
+}
+.bot-chat .bot-messages-container .bot-message::before,
+.bot-chat .bot-messages-container .bot-answer::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -1221,13 +1227,15 @@ a.curriculum-vitae-button p {
 	border-right: 1rem solid var(--white);
 	border-top: 1rem solid var(--white);
 }
-.bot-chat .bot-messages-container .bot-message p {
+.bot-chat .bot-messages-container .bot-message p,
+.bot-chat .bot-messages-container .bot-answer p {
 	line-height: 2rem;
 }
 .bot-messages-container .possible-answers-container {
 	margin: 2rem 0;
+	padding-bottom: 4rem;
 }
-.bot-messages-container .possible-answers-container .answer {
+.bot-messages-container .possible-answers-container .possible-answer {
 	padding: 1rem;
 	margin: 0.5rem 0;
 	background-color: var(--dark-grey);
@@ -1239,13 +1247,38 @@ a.curriculum-vitae-button p {
 	border-radius: 1rem;
 }
 @media (min-width: 768px) {
-	.bot-messages-container .possible-answers-container .answer:hover {
+	.bot-messages-container .possible-answers-container .possible-answer:hover {
 		background-color: var(--black);
 		cursor: pointer;
 	}
 }
-.bot-messages-container .possible-answers-container .answer p {
+.bot-messages-container .possible-answers-container .possible-answer p {
 	font-size: 1.4rem;
+}
+/* Estilos que se le aplica al html creado desde js */
+.bot-messages-container .user-answer {
+	/* position: relative; */
+	/* display: flex; */
+	display: none;
+	justify-content: flex-end;
+	margin: 2rem 0;
+}
+.bot-messages-container .user-answer p {
+	color: var(--white);
+	background-color: var(--black);
+	padding: 1rem;
+	border-radius: 1rem;
+}
+.bot-chat .bot-messages-container .bot-answers {
+	margin: 2rem 0;
+}
+.bot-contact-answer p a {
+	color: #58a6ff;
+	text-decoration: #58a6ff underline;
+	font-weight: 800;
+}
+.bot-contact-answer p span {
+	font-weight: 800;
 }
 /* ###################### */
 
@@ -1353,5 +1386,7 @@ PORTFOLIO:
 3- Cambiar algunos parrafos por h3 o h4 
 4- Ver si puedo mejorar el css (simplificarlo un poco)
 5- Poner las soft skills como botones
+6- Mejorar las restricciones del form
+7- Fijarse como hacer que el bot pueda escribir infinitamente y te mande otra vez para arriba (SE BUGEAAAAAAAA)
 */
 /* ###################### */
