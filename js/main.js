@@ -152,16 +152,28 @@ const userAnswer = $$('.user-answer');
 const botAnswersContainer = $$('.bot-answers');
 
 // $$$ Hello answer $$$ //
+const botHelloSection = $('.hello-bot-section');
+
 const userHelloAnswer = $('.user-hello-answer');
 const botHelloAnswersContainer = $('.bot-hello-answers');
 const botHelloAnswer = $$('.bot-hello-answer');
 // $$$$$$$$$$$$$$$ //
 
 // $$$ Contact answer $$$ //
+const botContactSection = $('.contact-bot-section');
+
 const userContactAnswer = $('.user-contact-answer');
 const botContactAnswersContainer = $('.bot-contact-answers');
 const botContactAnswer = $$('.bot-contact-answer');
-const botContactAnswerLink = $('.bot-contact-answer a.link-contact-bot');
+// const botContactAnswerLink = $('.bot-contact-answer a.link-contact-bot');
+// $$$$$$$$$$$$$$$ //
+
+// $$$ Hire answer $$$ //
+const botHireSection = $('.hire-bot-section');
+
+const userHireAnswer = $('.user-hire-answer');
+const botHireAnswersContainer = $('.bot-hire-answers');
+const botHireAnswer = $$('.bot-hire-answer');
 // $$$$$$$$$$$$$$$ //
 
 botIconContainer.addEventListener('click', () => {
@@ -176,13 +188,21 @@ botIconContainer.addEventListener('click', () => {
 function closeBot() {
 	botChatContainer.style.width = 0;
 	botChatContainer.style.height = 0;
+	botHelloSection.style.display = 'none';
+	botContactSection.style.display = 'none';
+	botHireSection.style.display = 'none';
+	botHelloAnswer.forEach(element => {
+		element.style.display = 'none';
+	});
+	botContactAnswer.forEach(element => {
+		element.style.display = 'none';
+	});
+	botHireAnswer.forEach(element => {
+		element.style.display = 'none';
+	});
 	for (let a = 0; a < possibleAnswers.length; a++) {
 		possibleAnswers[a].style.display = 'block';
 	}
-	userHelloAnswer.style.display = 'none';
-	botHelloAnswersContainer.style.display = 'none';
-	userContactAnswer.style.display = 'none';
-	botContactAnswersContainer.style.display = 'none';
 }
 
 closeBotChat.addEventListener('click', () => {
@@ -200,10 +220,8 @@ for (let a = 0; a < possibleAnswers.length; a++) {
 		});
 		switch (possibleAnswers[a]) {
 			case possibleAnswers[0]:
-				userContactAnswer.style.display = 'none';
-				botContactAnswersContainer.style.display = 'none';
-				botHelloAnswersContainer.style.display = 'block';
-				userHelloAnswer.style.display = 'flex';
+				botHelloSection.style.display = 'block';
+                userHelloAnswer.style.display = 'flex';
 				for (let b = 0; b < botHelloAnswer.length; b++) {
 					setTimeout(() => {
 						botHelloAnswer[b].style.display = 'block';
@@ -216,10 +234,8 @@ for (let a = 0; a < possibleAnswers.length; a++) {
 				break;
 
 			case possibleAnswers[1]:
-				userHelloAnswer.style.display = 'none';
-				botHelloAnswersContainer.style.display = 'none';
-				botContactAnswersContainer.style.display = 'block';
-				userContactAnswer.style.display = 'flex';
+				botContactSection.style.display = 'block';
+                userContactAnswer.style.display = 'flex';
 				for (let b = 0; b < botContactAnswer.length; b++) {
 					setTimeout(() => {
 						botContactAnswer[b].style.display = 'block';
@@ -232,7 +248,13 @@ for (let a = 0; a < possibleAnswers.length; a++) {
 				break;
 
 			case possibleAnswers[2]:
-				// Poner acá lo del contacto , falta declarar las variables y poner todo
+				botHireSection.style.display = 'block';
+                userHireAnswer.style.display = 'flex';
+				for (let b = 0; b < botHireAnswer.length; b++) {
+					setTimeout(() => {
+						botHireAnswer[b].style.display = 'block';
+					}, (b + 1) * 1500);
+				}
 				setTimeout(() => {
 					possibleAnswers[0].style.display = 'block';
 					possibleAnswers[1].style.display = 'block';
@@ -241,6 +263,8 @@ for (let a = 0; a < possibleAnswers.length; a++) {
 		}
 	});
 }
+
+// Probar de poner todas las botAnswer en una seccion del html y depende de la respuesta que se ponga se genera el html debajo de todo.
 
 // ------------- //
 // --- Arrow to go to the top of the page --- //
