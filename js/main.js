@@ -68,6 +68,7 @@ const projectParagraphImproving = $('.project-p-improving');
 // const myContactSection = $('.my-contact');
 const appreciationSection = $('.appreciation-section');
 
+// Para que los links del nav se vayan pintando dependiendo de la sección en la que se encuentre el usuario
 function paintedLink(actualUbication) {
 	const home = actualUbication <= scrollDownSection.offsetTop;
 	const aboutMe = actualUbication >= scrollDownSection.offsetTop && actualUbication < softSkillsSymbol.offsetTop;
@@ -88,6 +89,7 @@ const skillsHeader = $$('.skill-header');
 const skillsHeaderArrow = $$('.skill-header i');
 const skillsDescription = $$('.skill-description');
 
+// Para que las soft skills se desplieguen
 for (let i = 0; i < skillsHeader.length; i++) {
 	skillsHeader[i].addEventListener('click', () => {
 		skillsDescription[i].classList.toggle('active');
@@ -105,6 +107,7 @@ const descriptionProject = $$('.description-project');
 const gridProject = $$('.grid-project');
 const contactSection = $('.my-contact');
 
+// Para que de las cards de los proyectos se despliegue la info sobre ellos, en dispositivos que no son moviles
 for (let c = 0; c < linkImageContainer.length; c++) {
 	linkImageContainer[c].addEventListener('mouseover', () => {
 		hoverImageParagraph[c].style.height = 0;
@@ -116,6 +119,7 @@ for (let c = 0; c < linkImageContainer.length; c++) {
 	});
 }
 
+// Para que de las cards de los proyectos se despliegue automaticamente a cierta altura de la página la info sobre ellos,  en dispositivos moviles
 function projectsDescription(actualUbication) {
 	// Esto no me conviene pq la página va cambiando de altura , aunque es mas linda la transición
 	// const firstCard = actualUbication >= 5474 && actualUbication <= 5886;
@@ -172,6 +176,7 @@ const botContactAnswerLink = $('.bot-contact-answer a.link-contact-bot');
 // $$$ Hire answer $$$ //
 // $$$$$$$$$$$$$$$ //
 
+// Función para abrir el chat del bot
 botIconContainer.addEventListener('click', () => {
 	if (!mediaqueryList.matches) {
 		botChatContainer.style.width = '100%';
@@ -181,32 +186,54 @@ botIconContainer.addEventListener('click', () => {
 		botChatContainer.style.height = '75%';
 	}
 	for (let b = 0; b < botMessages.length; b++) {
-		botMessages[b].style.display = 'none';
-		setTimeout(() => {
-			botMessages[b].style.display = 'block';
-		}, (b + 1) * 1500);
+		timeOutFunction1500(botMessages, b);
 	}
 	for (let a = 0; a < possibleAnswers.length; a++) {
-		possibleAnswers[a].style.display = 'none';
-		setTimeout(() => {
-			possibleAnswers[a].style.display = 'block';
-		}, 6000);
+		timeOutFunction6000(possibleAnswers, a);
 	}
 });
 
+// Función para que se desplieguen de a poco los mensajes del bot
+function timeOutFunction1500(element, param) {
+	element[param].style.display = 'none';
+	setTimeout(() => {
+		element[param].style.display = 'block';
+	}, (param + 1) * 1500);
+}
+
+// Función para que se desplieguen de a poco las opciones de respuesta que puede elegir el usuario para que le responda el bot al inicio
+function timeOutFunction6000(element, param) {
+	element[param].style.display = 'none';
+	setTimeout(() => {
+		element[param].style.display = 'block';
+	}, 6000);
+}
+
+// Función para que se desplieguen de a poco las opciones de respuesta que puede elegir el usuario para que le responda el bot luego de elegir una respuesta previamente
+function timeOutFunction7500(element, param) {
+	setTimeout(() => {
+		element[param].style.display = 'block';
+	}, 7500);
+}
+
+// Función que sirve para cerrar el chat del bot
 function closeBot() {
 	botChatContainer.style.width = 0;
 	botChatContainer.style.height = 0;
 	botHelloSection.style.display = 'none';
 	botContactSection.style.display = 'none';
-	botHelloAnswer.forEach((element) => {
-		element.style.display = 'none';
-	});
-	botContactAnswer.forEach((element) => {
-		element.style.display = 'none';
+	closeBotAnswers(botHelloAnswer);
+	closeBotAnswers(botContactAnswer);
+}
+
+// Función que sirve para borrar las respuestas del bot (así cuando se vuelve a abrir el chat del bot aparece todo como antes)
+function closeBotAnswers(ans) {
+	ans.forEach((an) => {
+		an.style.display = 'none';
 	});
 }
 
+// Cierre de chat de bot
 closeBotChat.addEventListener('click', () => {
 	closeBot();
 });
@@ -214,11 +241,10 @@ botContactAnswerLink.addEventListener('click', () => {
 	closeBot();
 });
 
+// Despliegue de mensajes
 for (let a = 0; a < possibleAnswers.length; a++) {
 	possibleAnswers[a].addEventListener('click', () => {
-		possibleAnswers.forEach((ans) => {
-			ans.style.display = 'none';
-		});
+		closeBotAnswers(possibleAnswers);
 		switch (possibleAnswers[a]) {
 			case possibleAnswers[0]:
 				botContactSection.style.display = 'none';
@@ -226,37 +252,25 @@ for (let a = 0; a < possibleAnswers.length; a++) {
 				botHelloSection.style.display = 'block';
 				userHelloAnswer.style.display = 'flex';
 				for (let b = 0; b < botHelloAnswer.length; b++) {
-					botHelloAnswer[b].style.display = 'none';
-					setTimeout(() => {
-						botHelloAnswer[b].style.display = 'block';
-					}, (b + 1) * 1500);
+					timeOutFunction1500(botHelloAnswer, b);
 				}
-				setTimeout(() => {
-					possibleAnswers[1].style.display = 'block';
-				}, 7500);
+				timeOutFunction7500(possibleAnswers, 1);
 				break;
-
 			case possibleAnswers[1]:
 				botHelloSection.style.display = 'none';
 				userHelloAnswer.style.display = 'none';
 				botContactSection.style.display = 'block';
 				userContactAnswer.style.display = 'flex';
 				for (let b = 0; b < botContactAnswer.length; b++) {
-					botContactAnswer[b].style.display = 'none';
-					setTimeout(() => {
-						botContactAnswer[b].style.display = 'block';
-					}, (b + 1) * 1500);
+					timeOutFunction1500(botContactAnswer, b);
 				}
-				setTimeout(() => {
-					possibleAnswers[0].style.display = 'block';
-				}, 7500);
+				timeOutFunction7500(possibleAnswers, 0);
 				break;
 		}
 	});
 }
 
-// El codigo de ahora funciona pero no es tan lindo, ver si se puede mejorar , no usar codigo repetido y reutilizarlo
-// Manejarse con clases y no con style.display
+// Ver como hacer que se scrollee automaticamente abajo de todo cuando van apareciendo los mensajes del bot
 // Probar de poner todas las botAnswer en una seccion del html y depende de la respuesta que se ponga se genera el html debajo de todo.
 
 // ------------- //
