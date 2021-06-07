@@ -64,7 +64,7 @@ const softSkillsSymbol = $('.soft-skills-container .final-symbol');
 // const myKnowledgesSection = $('.my-knowledges');
 const flexKnowledgeContainer = $('.flex-knowdlege-container');
 // const myProjectSection = $('.my-projects');
-const projectParagraphImproving = $('.project-p-improving');
+const projectParagraphImproving = $('.project-span-improving');
 // const myContactSection = $('.my-contact');
 const appreciationSection = $('.appreciation-section');
 
