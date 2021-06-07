@@ -595,6 +595,7 @@ a.curriculum-vitae-button span {
 }
 .soft-skills-container .soft-skills-section .soft-skills button.skill {
 	border: none;
+	font-family: var(--font-page);
 }
 .soft-skills .skill .skill-header {
 	display: flex;
@@ -608,7 +609,6 @@ a.curriculum-vitae-button span {
 	color: var(--primary-color);
 }
 .soft-skills .skill .skill-header h4 {
-	font-family: var(--font-page);
 	font-weight: 600;
 }
 .soft-skills .skill .skill-header i {
