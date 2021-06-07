@@ -85,13 +85,13 @@ function paintedLink(actualUbication) {
 // ------------- //
 
 // --- Soft skills --- //
-const skillsHeader = $$('.skill-header');
+const skill = $$('.skill');
 const skillsHeaderArrow = $$('.skill-header i');
 const skillsDescription = $$('.skill-description');
 
 // Para que las soft skills se desplieguen
-for (let i = 0; i < skillsHeader.length; i++) {
-	skillsHeader[i].addEventListener('click', () => {
+for (let i = 0; i < skill.length; i++) {
+	skill[i].addEventListener('click', () => {
 		skillsDescription[i].classList.toggle('active');
 		skillsHeaderArrow[i].classList.toggle('bxs-chevron-down');
 		skillsHeaderArrow[i].classList.toggle('bxs-chevron-up');

@@ -77,12 +77,16 @@ h2.title {
 		max-height: 41.6rem;
 	}
 }
-.improving-paragraph {
+.improving-span {
 	font-style: italic;
 	color: var(--short-paragraph-color);
 	text-align: center;
 	padding-bottom: 2.5rem;
 	font-weight: 600;
+}
+.section-padding {
+	padding: 2rem 2rem 10rem 2rem;
+	border-bottom: 0.7rem solid var(--little-grey);
 }
 /* ###################### */
 
@@ -141,7 +145,6 @@ header {
 	margin-bottom: 0.4rem;
 	background-color: var(--primary-color);
 	transition: all 0.35s linear;
-	/* box-shadow: 0 0.2rem 2rem var(--white); */
 }
 .menu-button .menu-div.line-1.active {
 	transform: translateY(0.8rem) rotate(45deg);
@@ -154,15 +157,11 @@ header {
 }
 .ul-links-list {
 	position: absolute;
-	/* right: -99rem; */
 	right: -100%;
 	top: 6rem;
-	/* right: 0;
-	top: -30rem; */
 	width: 100%;
 	text-align: center;
 	background-color: var(--black);
-	/* background-color: var(--dark-grey); */
 	transition: all 0.35s linear;
 }
 @media (min-width: 768px) {
@@ -382,7 +381,6 @@ ul.ul-links-list li a.active {
 	padding-top: 10rem;
 	border-bottom: 0.7rem solid var(--little-grey);
 	background-color: var(--black);
-	/* background-color: var(--dark-grey); */
 }
 .scroll-down-container .bxs-down-arrow-alt,
 .scroll-down-container p {
@@ -405,8 +403,6 @@ ul.ul-links-list li a.active {
 /* ### ABOUT ME ### */
 .about-me {
 	background-color: var(--white);
-	border-bottom: 0.7rem solid var(--little-grey);
-	padding: 2rem 2rem 10rem 2rem;
 	/* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
 	/* background-color: var(--little-grey); */
 	/* background-image: url(/img/cool-background.png); */
@@ -499,7 +495,7 @@ a.curriculum-vitae-button {
 		animation: beat 0.4s alternate infinite ease-in;
 	}
 }
-a.curriculum-vitae-button p {
+a.curriculum-vitae-button span {
 	text-transform: uppercase;
 	font-weight: 800;
 	line-height: 2.5rem;
@@ -541,7 +537,7 @@ a.curriculum-vitae-button p {
 	align-items: flex-end;
 	width: 10.5rem;
 }
-.my-languages-container .languages p {
+.my-languages-container .languages h4 {
 	font-weight: 600;
 	padding-top: 1.5rem;
 }
@@ -597,19 +593,23 @@ a.curriculum-vitae-button p {
 .soft-skills-container .soft-skills-section .soft-skills {
 	margin: 2.5rem auto;
 }
+.soft-skills-container .soft-skills-section .soft-skills button.skill {
+	border: none;
+}
 .soft-skills .skill .skill-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	font-family: var(--font-page);
-	font-weight: 600;
 	width: 100%;
 	padding: 2rem;
 	cursor: pointer;
 	border: 0.1rem solid var(--dark-graphite);
 	background-color: var(--black);
-	/* background-color: var(--dark-graphite); */
 	color: var(--primary-color);
+}
+.soft-skills .skill .skill-header h4 {
+	font-family: var(--font-page);
+	font-weight: 600;
 }
 .soft-skills .skill .skill-header i {
 	font-size: 2.5rem;
@@ -653,9 +653,7 @@ a.curriculum-vitae-button p {
 
 /* ### KNOWLEDGES ### */
 .my-knowledges {
-	padding: 2rem 2rem 10rem 2rem;
 	background-color: var(--dark-grey);
-	border-bottom: 0.7rem solid var(--little-grey);
 }
 .my-knowledges h2 {
 	color: var(--white);
@@ -750,7 +748,7 @@ a.curriculum-vitae-button p {
 		animation: beat 0.5s alternate infinite ease-in;
 	}
 }
-.my-knowledges .grid-technologies-container .grid-technology p {
+.my-knowledges .grid-technologies-container .grid-technology h3 {
 	color: white;
 	font-size: 2rem;
 	font-weight: 600;
@@ -785,7 +783,7 @@ a.curriculum-vitae-button p {
 	align-items: center;
 	margin-bottom: 1rem;
 }
-.flex-knowdlege-container .brain-loading-container .loading-container p {
+.flex-knowdlege-container .brain-loading-container .loading-container span {
 	font-style: italic;
 	font-weight: 600;
 	color: var(--white);
@@ -800,8 +798,6 @@ a.curriculum-vitae-button p {
 
 /* ### PROJECTS ### */
 .my-projects {
-	border-bottom: 0.7rem solid var(--little-grey);
-	padding: 2rem 2rem 10rem 2rem;
 	background-color: var(--primary-color);
 	/* background-color: #ff9600; */
 }
@@ -852,7 +848,7 @@ a.curriculum-vitae-button p {
 	position: relative;
 	display: inline-block;
 }
-.my-projects .grid-projects-container .grid-project h4.project-name {
+.my-projects .grid-projects-container .grid-project h3.project-name {
 	-webkit-text-stroke: 0.1rem var(--primary-color);
 	letter-spacing: 0.3rem;
 	padding: 2rem 0;
@@ -940,8 +936,8 @@ a.curriculum-vitae-button p {
 	justify-content: center;
 	padding: 1rem 0;
 }
-.grid-project .flex-view-project-container .code-project p,
-.grid-project .flex-view-project-container .page-project p {
+.grid-project .flex-view-project-container .code-project span,
+.grid-project .flex-view-project-container .page-project span {
 	color: var(--white);
 	padding-right: 0.8rem;
 }
@@ -953,12 +949,12 @@ a.curriculum-vitae-button p {
 @media (min-width: 768px) {
 	.grid-project .flex-view-project-container .code-project i:hover,
 	.grid-project .flex-view-project-container .page-project i:hover,
-	.grid-project .flex-view-project-container .code-project p:hover,
-	.grid-project .flex-view-project-container .page-project p:hover {
+	.grid-project .flex-view-project-container .code-project span:hover,
+	.grid-project .flex-view-project-container .page-project span:hover {
 		color: var(--primary-color);
 	}
 }
-.my-projects .project-p-improving {
+.my-projects .project-span-improving {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -966,15 +962,15 @@ a.curriculum-vitae-button p {
 	margin-top: 3rem;
 }
 @media (min-width: 400px) {
-	.my-projects .project-p-improving {
+	.my-projects .project-span-improving {
 		flex-direction: row;
 	}
 }
-.my-projects .project-p-improving p {
+.my-projects .project-span-improving span {
 	color: var(--dark-charcoal);
 	padding-bottom: 1rem;
 }
-.my-projects .project-p-improving i {
+.my-projects .project-span-improving i {
 	font-size: 1.8rem;
 	color: var(--dark-charcoal);
 	padding-left: 0.5rem;
@@ -1083,12 +1079,6 @@ a.curriculum-vitae-button p {
 	color: var(--primary-color);
 	text-transform: uppercase;
 	line-height: 2.5rem;
-}
-.my-contact .flex-contact-container .chat-with-me p {
-	color: var(--dark-red);
-	text-transform: var(--dark-red);
-	text-transform: uppercase;
-	font-weight: 600;
 }
 .my-contact .flex-contact-container .chat-with-me i {
 	font-size: 3rem;
@@ -1386,17 +1376,12 @@ footer.footer-container .nav-links-footer .ul-links-list-footer a {
 	color: var(--primary-color);
 	font-size: 5rem;
 }
-
 /* ###################### */
 
 /* 
 PORTFOLIO:
-1- Mejorar la mezcla de colores
-2- Mejorar la transición de las Soft Skills
-3- Cambiar algunos parrafos por h3 o h4 
-4- Ver si puedo mejorar el css (simplificarlo un poco)
-5- Poner las soft skills como botones
-6- Mejorar las restricciones del form
-7- Fijarse como hacer que el bot pueda escribir infinitamente y te mande otra vez para arriba (SE BUGEAAAAAAAA)
+1- Mejorar la mezcla de colores ❌
+2- Mejorar la transición de las Soft Skills ❌
+3- Mejorar las restricciones del form ❌
 */
 /* ###################### */
