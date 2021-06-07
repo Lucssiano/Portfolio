@@ -108,16 +108,16 @@ const gridProject = $$('.grid-project');
 const contactSection = $('.my-contact');
 
 // Para que de las cards de los proyectos se despliegue la info sobre ellos, en dispositivos que no son moviles
-for (let c = 0; c < linkImageContainer.length; c++) {
-	linkImageContainer[c].addEventListener('mouseover', () => {
-		hoverImageParagraph[c].style.height = 0;
-		hoverImageParagraph[c].style.paddingBottom = 0;
-		linkImageContainer[c].addEventListener('mouseout', () => {
-			hoverImageParagraph[c].style.height = '3.8rem';
-			hoverImageParagraph[c].style.paddingBottom = '2rem';
-		});
-	});
-}
+// for (let c = 0; c < linkImageContainer.length; c++) {
+// 	linkImageContainer[c].addEventListener('mouseover', () => {
+// 		hoverImageParagraph[c].style.height = 0;
+// 		hoverImageParagraph[c].style.paddingBottom = 0;
+// 		linkImageContainer[c].addEventListener('mouseout', () => {
+// 			hoverImageParagraph[c].style.height = '3.8rem';
+// 			hoverImageParagraph[c].style.paddingBottom = '2rem';
+// 		});
+// 	});
+// }
 
 // Para que de las cards de los proyectos se despliegue automaticamente a cierta altura de la página la info sobre ellos,  en dispositivos moviles
 function projectsDescription(actualUbication) {
