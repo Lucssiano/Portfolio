@@ -15,6 +15,7 @@ const lineMenuButton2 = $('.line-2');
 const lineMenuButton3 = $('.line-3');
 const ulLinksList = $('.ul-links-list');
 
+// Función para desplegar el menú
 function menuDisplay() {
 	ulLinksList.classList.toggle('active');
 	lineMenuButton1.classList.toggle('active');
@@ -186,44 +187,52 @@ botIconContainer.addEventListener('click', () => {
 		botChatContainer.style.height = '75%';
 	}
 	for (let b = 0; b < botMessages.length; b++) {
-		timeOutFunction1500(botMessages, b);
+		timeOutBotFunction(botMessages, b);
 	}
 	for (let a = 0; a < possibleAnswers.length; a++) {
-		timeOutFunction6000(possibleAnswers, a);
+		timeOutBotFunction(possibleAnswers, a, "Chat with Lucho's Bot started");
 	}
 });
 
-// Función para que se desplieguen de a poco los mensajes del bot
-function timeOutFunction1500(element, param) {
+// Función para que el bot despliegue de a poco los mensajes
+function timeOutBotFunction(element, param, string) {
 	element[param].style.display = 'none';
-	setTimeout(() => {
-		element[param].style.display = 'block';
-	}, (param + 1) * 1500);
+	// Para que se desplieguen los mensajes del bot de a poco
+	if (element === botMessages || element === botHelloAnswer || element === botContactAnswer) {
+		setTimeout(() => {
+			console.log(param);
+			element[param].style.display = 'block';
+			botMessagesContainer.scrollTo(0, $('.bot-chat').scrollHeight);
+		}, (param + 1) * 1500);
+		// Para que se despliegue las opcion de respuesta 0 que puede elegir el usuario para que le responda el bot luego de que termine de responderle sobre el contacto
+	} else if (element[param] === possibleAnswers[0] && string === undefined) {
+		setTimeout(() => {
+			element[param].style.display = 'block';
+			botMessagesContainer.scrollTo(0, $('.bot-chat').scrollHeight);
+		}, (botContactAnswer.length + 1) * 1500);
+		// Para que se despliegue las opcion de respuesta 1 que puede elegir el usuario para que le responda el bot luego de que termine de responderle sobre el saludo "Hello"
+	} else if (element[param] === possibleAnswers[1] && string === undefined) {
+		setTimeout(() => {
+			element[param].style.display = 'block';
+			botMessagesContainer.scrollTo(0, $('.bot-chat').scrollHeight);
+		}, (botHelloAnswer.length + 1) * 1500);
+		// Para que se desplieguen las opciones de respuesta que puede elegir el usuario para que le responda el bot luego de que se "haya introducido" el bot
+	} else if (string !== undefined) {
+		setTimeout(() => {
+			element[param].style.display = 'block';
+			botMessagesContainer.scrollTo(0, $('.bot-chat').scrollHeight);
+		}, (botMessages.length + 1) * 1500);
+	}
 }
 
-// Función para que se desplieguen de a poco las opciones de respuesta que puede elegir el usuario para que le responda el bot al inicio
-function timeOutFunction6000(element, param) {
-	element[param].style.display = 'none';
-	setTimeout(() => {
-		element[param].style.display = 'block';
-	}, 6000);
-}
-
-// Función para que se desplieguen de a poco las opciones de respuesta que puede elegir el usuario para que le responda el bot luego de elegir una respuesta previamente
-function timeOutFunction7500(element, param) {
-	setTimeout(() => {
-		element[param].style.display = 'block';
-	}, 7500);
-}
-
-// Función que sirve para cerrar el chat del bot
+// Función para cerrar el chat del bot
 function closeBot() {
 	botChatContainer.style.width = 0;
 	botChatContainer.style.height = 0;
 	botHelloSection.style.display = 'none';
 	botContactSection.style.display = 'none';
-	closeBotAnswers(botHelloAnswer);
-	closeBotAnswers(botContactAnswer);
+	closeBotAnswers(botHelloAnswer, botContactAnswer);
+	// closeBotAnswers(botContactAnswer);
 }
 
 // Función que sirve para borrar las respuestas del bot (así cuando se vuelve a abrir el chat del bot aparece todo como antes)
@@ -252,9 +261,9 @@ for (let a = 0; a < possibleAnswers.length; a++) {
 				botHelloSection.style.display = 'block';
 				userHelloAnswer.style.display = 'flex';
 				for (let b = 0; b < botHelloAnswer.length; b++) {
-					timeOutFunction1500(botHelloAnswer, b);
+					timeOutBotFunction(botHelloAnswer, b);
 				}
-				timeOutFunction7500(possibleAnswers, 1);
+				timeOutBotFunction(possibleAnswers, 1);
 				break;
 			case possibleAnswers[1]:
 				botHelloSection.style.display = 'none';
@@ -262,15 +271,15 @@ for (let a = 0; a < possibleAnswers.length; a++) {
 				botContactSection.style.display = 'block';
 				userContactAnswer.style.display = 'flex';
 				for (let b = 0; b < botContactAnswer.length; b++) {
-					timeOutFunction1500(botContactAnswer, b);
+					timeOutBotFunction(botContactAnswer, b);
 				}
-				timeOutFunction7500(possibleAnswers, 0);
+				timeOutBotFunction(possibleAnswers, 0);
 				break;
 		}
 	});
 }
+// ------------- //
 
-// Ver como hacer que se scrollee automaticamente abajo de todo cuando van apareciendo los mensajes del bot
 // Probar de poner todas las botAnswer en una seccion del html y depende de la respuesta que se ponga se genera el html debajo de todo.
 
 // ------------- //

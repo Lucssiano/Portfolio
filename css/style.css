@@ -1135,7 +1135,7 @@ a.curriculum-vitae-button span {
 	height: 0;
 	background-color: var(--dark-charcoal);
 	transition: 1s;
-	overflow-y: scroll;
+	/* overflow-y: clip; */
 }
 @media (min-width: 768px) {
 	.bot-chat {
@@ -1190,10 +1190,9 @@ a.curriculum-vitae-button span {
 }
 .bot-chat .bot-messages-container {
 	width: 100%;
-	height: 100%;
+	height: 81%;
 	padding: 2rem;
-	/* overflow-y: scroll; */
-	/* position: absolute; */
+	overflow-y: scroll;
 }
 .bot-chat .bot-messages-container .bot-message,
 .bot-chat .bot-messages-container .bot-answer {
@@ -1383,10 +1382,7 @@ PORTFOLIO:
 1- Mejorar la mezcla de colores ❌
 2- Mejorar la transición de las Soft Skills ❌
 3- Mejorar las restricciones del form ❌
-4- Que te mande scroll para abajo el bot ❌
+4- Cambiar idiomas de la página con i18n ❌
 5- No poner barrita de inglés , poner nivel ❌
-6- Cambiar el hover de las cards ❌
-7- Cambiar idiomas de la página con in8 o algo así ❌
-
 */
 /* ###################### */
