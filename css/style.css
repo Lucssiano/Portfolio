@@ -1148,12 +1148,6 @@ a.curriculum-vitae-button span {
 	transition: 1s;
 	/* overflow-y: clip; */
 }
-@media (min-width: 768px) {
-	.bot-chat {
-		bottom: 7rem;
-		right: 1rem;
-	}
-}
 .bot-chat .bot-presentation-container {
 	display: flex;
 	flex-flow: row nowrap;
