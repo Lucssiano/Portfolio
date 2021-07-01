@@ -1275,15 +1275,6 @@ a.curriculum-vitae-button span {
 .bot-contact-answer p span {
 	font-weight: 800;
 }
-/* .display-none {
-	display: none;
-}
-.display-block {
-	display: block;
-}
-.display-flex {
-	display: flex;
-} */
 /* ###################### */
 
 /* ### APPRECIATION SECTION OF THE PORTFOLIO ### */
@@ -1384,9 +1375,10 @@ footer.footer-container .nav-links-footer .ul-links-list-footer a {
 
 /* 
 PORTFOLIO:
-1- Mejorar la mezcla de colores ❌
-2- Mejorar la transición de las Soft Skills ❌
+1- Mejorar la transición de las Soft Skills ❌
+2- Mejorar la mezcla de colores ❌
 3- Mejorar las restricciones del form ❌
 4- Cambiar idiomas de la página con i18n ❌
+5- Ver si me conviene cambiar el retardo de los mensajes del bot ❌ 
 */
 /* ###################### */
