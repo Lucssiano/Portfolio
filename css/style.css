@@ -403,13 +403,6 @@ ul.ul-links-list li a.active {
 /* ### ABOUT ME ### */
 .about-me {
 	background-color: var(--white);
-	/* background-image: linear-gradient(to right, #868f96 0%, #596164 100%); */
-	/* background-color: var(--little-grey); */
-	/* background-image: url(/img/cool-background.png); */
-	/* background-color: var(--little-white); */
-	/* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
-	/* background-size: cover; */
-	/* background-image: url(/img/cool-background-grey.png); */
 }
 .about-me h2 {
 	color: var(--black);
