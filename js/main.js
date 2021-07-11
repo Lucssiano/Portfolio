@@ -200,7 +200,6 @@ function timeOutBotFunction(element, param, string) {
 	// Para que se desplieguen los mensajes del bot de a poco
 	if (element === botMessages || element === botHelloAnswer || element === botContactAnswer) {
 		setTimeout(() => {
-			console.log(param);
 			element[param].style.display = 'block';
 			botMessagesContainer.scrollTo(0, $('.bot-chat').scrollHeight);
 		}, (param + 1) * 1500);
