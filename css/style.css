@@ -403,6 +403,7 @@ ul.ul-links-list li a.active {
 /* ### ABOUT ME ### */
 .about-me {
 	background-color: var(--white);
+	/* No me gusta la mezcla de colores del About Me */
 }
 .about-me h2 {
 	color: var(--black);
