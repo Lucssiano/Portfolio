@@ -1,3 +1,5 @@
+import Translator from "./translator.js";
+
 // Forma de simplificar los selectores para no escribirlos cada vez que se necesiten
 function $(selector) {
 	return document.querySelector(selector);
@@ -55,18 +57,14 @@ window.onscroll = function () {
 	}
 	projectsDescription(actualUbication);
 	paintedLink(actualUbication);
-	// toUpArrowDisplay(actualUbication);
 };
 
 const listLinks = $$('.list-link');
 const scrollDownSection = $('.scroll-down-container');
 // Tuve que poner secciones más especificas porque no me tomaba bien el cambio
 const softSkillsSymbol = $('.soft-skills-container .final-symbol');
-// const myKnowledgesSection = $('.my-knowledges');
 const flexKnowledgeContainer = $('.flex-knowdlege-container');
-// const myProjectSection = $('.my-projects');
 const projectParagraphImproving = $('.project-span-improving');
-// const myContactSection = $('.my-contact');
 const appreciationSection = $('.appreciation-section');
 
 // Para que los links del nav se vayan pintando dependiendo de la sección en la que se encuentre el usuario
@@ -85,6 +83,33 @@ function paintedLink(actualUbication) {
 }
 // ------------- //
 
+// --- Translator --- //
+let translator = new Translator({
+	langSelected: '',
+});
+
+const spanishButton = $('button.language.spanish');
+const spanishButtonImg = $('button.language.spanish img');
+const englishButton = $('button.language.english');
+const englishButtonImg = $('button.language.english img');
+
+spanishButton.addEventListener('click', () => {
+	translator.langSelected = 'es';
+    translator.changeLanguage(translator.langSelected);
+	if (!spanishButtonImg.classList.contains('active')) {
+		spanishButtonImg.classList.add('active');
+		englishButtonImg.classList.remove('active');
+	}
+});
+englishButton.addEventListener('click', () => {
+	translator.langSelected = 'en';
+    translator.changeLanguage(translator.langSelected);
+	if (!englishButtonImg.classList.contains('active')) {
+		englishButtonImg.classList.add('active');
+		spanishButtonImg.classList.remove('active');
+	}
+});
+
 // --- Soft skills --- //
 const skill = $$('.skill');
 const skillsHeaderArrow = $$('.skill-header i');
@@ -102,33 +127,12 @@ for (let i = 0; i < skill.length; i++) {
 // ------------- //
 
 // --- Project Cards --- //
-const linkImageContainer = $$('.img-link');
-const hoverImageParagraph = $$('.hover-image-paragraph');
 const descriptionProject = $$('.description-project');
 const gridProject = $$('.grid-project');
 const contactSection = $('.my-contact');
 
-// Para que de las cards de los proyectos se despliegue la info sobre ellos, en dispositivos que no son moviles
-// for (let c = 0; c < linkImageContainer.length; c++) {
-// 	linkImageContainer[c].addEventListener('mouseover', () => {
-// 		hoverImageParagraph[c].style.height = 0;
-// 		hoverImageParagraph[c].style.paddingBottom = 0;
-// 		linkImageContainer[c].addEventListener('mouseout', () => {
-// 			hoverImageParagraph[c].style.height = '3.8rem';
-// 			hoverImageParagraph[c].style.paddingBottom = '2rem';
-// 		});
-// 	});
-// }
-
 // Para que de las cards de los proyectos se despliegue automaticamente a cierta altura de la página la info sobre ellos,  en dispositivos moviles
 function projectsDescription(actualUbication) {
-	// Esto no me conviene pq la página va cambiando de altura , aunque es mas linda la transición
-	// const firstCard = actualUbication >= 5474 && actualUbication <= 5886;
-	// const secondCard = actualUbication >= 5956 && actualUbication <= 6305;
-	// const thirdCard = actualUbication >= 6339 && actualUbication <= 6689;
-	// const fourthCard = actualUbication >= 6753 && actualUbication <= 7101;
-	// const fifthCard = actualUbication >= 7137 && actualUbication <= 7494;
-	// const sixthCard = actualUbication >= 7528 && actualUbication <= 7891;
 	const firstCard = gridProject[0].offsetTop >= actualUbication && gridProject[0].offsetTop <= gridProject[1].offsetTop;
 	const secondCard = gridProject[1].offsetTop >= actualUbication && gridProject[1].offsetTop <= gridProject[2].offsetTop;
 	const thirdCard = gridProject[2].offsetTop >= actualUbication && gridProject[2].offsetTop <= gridProject[3].offsetTop;
@@ -152,16 +156,12 @@ const closeBotChat = $('.exit-bot-container');
 const mediaqueryList = window.matchMedia('(min-width: 768px)');
 const botMessagesContainer = $('.bot-messages-container');
 const botMessages = $$('.bot-message');
-const possibleAnswersContainer = $('.possible-answers-container');
 const possibleAnswers = $$('.possible-answer');
-const userAnswer = $$('.user-answer');
-const botAnswersContainer = $$('.bot-answers');
 
 // $$$ Hello answer $$$ //
 const botHelloSection = $('.hello-bot-section');
 
 const userHelloAnswer = $('.user-hello-answer');
-const botHelloAnswersContainer = $('.bot-hello-answers');
 const botHelloAnswer = $$('.bot-hello-answer');
 // $$$$$$$$$$$$$$$ //
 
@@ -231,7 +231,6 @@ function closeBot() {
 	botHelloSection.style.display = 'none';
 	botContactSection.style.display = 'none';
 	closeBotAnswers(botHelloAnswer, botContactAnswer);
-	// closeBotAnswers(botContactAnswer);
 }
 
 // Función que sirve para borrar las respuestas del bot (así cuando se vuelve a abrir el chat del bot aparece todo como antes)

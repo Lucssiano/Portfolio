@@ -217,9 +217,45 @@ ul.ul-links-list li a.active {
 }
 /* ###################### */
 
+/* ### CHANGE LANGUAGE ### */
+.change-language {
+	position: absolute;
+	right: 40%;
+	top: 13%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 800;
+}
+@media (min-width: 768px) {
+	.change-language {
+		top: 19%;
+	}
+}
+.change-language button {
+	margin: 0 2rem;
+	background-color: var(--black);
+	border: none;
+}
+@media (min-width: 768px) {
+	.change-language button:hover {
+		cursor: pointer;
+	}
+}
+.change-language button img {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	transition: 0.5s;
+}
+.change-language button img.active {
+	box-shadow: 0 0 1.2rem -0.2rem var(--white);
+}
+/* ###################### */
+
 /* ### MAIN CONTENT ### */
 .main-content {
-	padding-top: 10rem;
+	padding-top: 15rem;
 	display: flex;
 	flex-flow: column nowrap;
 	position: relative; /* Para acomodar la líneas decorativas con mi nombre , tomando como referencia esta sección */
@@ -228,6 +264,7 @@ ul.ul-links-list li a.active {
 }
 @media (min-width: 768px) {
 	.main-content {
+		padding-top: 10rem;
 		flex-flow: row nowrap;
 		align-items: center;
 		justify-content: center;
