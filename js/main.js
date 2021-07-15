@@ -160,16 +160,13 @@ const possibleAnswers = $$('.possible-answer');
 
 // $$$ Hello answer $$$ //
 const botHelloSection = $('.hello-bot-section');
-
 const userHelloAnswer = $('.user-hello-answer');
 const botHelloAnswer = $$('.bot-hello-answer');
 // $$$$$$$$$$$$$$$ //
 
 // $$$ Contact answer $$$ //
 const botContactSection = $('.contact-bot-section');
-
 const userContactAnswer = $('.user-contact-answer');
-const botContactAnswersContainer = $('.bot-contact-answers');
 const botContactAnswer = $$('.bot-contact-answer');
 const botContactAnswerLink = $('.bot-contact-answer a.link-contact-bot');
 // $$$$$$$$$$$$$$$ //
