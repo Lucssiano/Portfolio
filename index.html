@@ -26,19 +26,19 @@
         <nav class="nav-links">
             <ul class="ul-links-list">
                 <li>
-                    <a href="#home" class="list-link active">Home</a>
+                    <a href="#home" class="list-link active" data-i18n="navLinks.home">Home</a>
                 </li>
                 <li>
-                    <a href="#about-me-section" class="list-link">About me</a>
+                    <a href="#about-me-section" class="list-link" data-i18n="navLinks.aboutMe">About Me</a>
                 </li>
                 <li>
-                    <a href="#knowledge-section" class="list-link">Knowledges</a>
+                    <a href="#knowledge-section" class="list-link" data-i18n="navLinks.knowledges">Knowledges</a>
                 </li>
                 <li>
-                    <a href="#projects-section" class="list-link">Projects</a>
+                    <a href="#projects-section" class="list-link" data-i18n="navLinks.projects">Projects</a>
                 </li>
                 <li>
-                    <a href="#contact-section" class="list-link">Contact</a>
+                    <a href="#contact-section" class="list-link" data-i18n="navLinks.contact">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -58,12 +58,12 @@
             <p>Luciano Riente</p>
         </div>
         <div class="my-image-container">
-            <h1>Hello</h1>
+            <h1 data-i18n="mainContent.helloWord">Hello</h1>
             <img src="img/Yo.jpg" alt="Photo of Me">
         </div>
         <div class="my-info-container">
             <div class="my-name-container">
-                <p>I Am</p>
+                <p data-i18n="mainContent.presentation">I Am</p>
                 <h2>Luciano Riente</h2>
             </div>
             <div class="social-media-icons">
@@ -79,52 +79,52 @@
 
     <section class="scroll-down-container">
         <i class='bx bxs-down-arrow-alt first-arrow'></i>
-        <p>Scroll down</p>
+        <p data-i18n="scrollDown.paragraph">Scroll down</p>
         <i class='bx bxs-down-arrow-alt second-arrow'></i>
     </section> <!-- Section to indicate the user to scroll down -->
 
     <section class="about-me section-padding" id="about-me-section">
-        <h2 class="title">About <span>Me</span></h2>
+        <h2 class="title" data-i18n="aboutMe.title">About <span>Me</span></h2>
         <section class="flex-containers-about-me">
             <img src="img/Startup_Monochromatic.svg" alt="Start-Up-svg" class="about-me-img decoration-image">
             <section class="about-me-information-container">
-                <h3 class="symbol description">Description</h3>
+                <h3 class="symbol description" data-i18n="aboutMe.descriptionSymbol">Description</h3>
                 <div class="description-container">
-                    <p>Currently, i am studying Front-end technologies on my own and i have been studying in the
+                    <p data-i18n="aboutMe.descriptionP1">Currently, i am studying Front-end technologies on my own and i have been studying in the
                         technical
                         secondary school "Instituto San Judas Tadeo" (in the "Electronics" expertise)</p>
-                    <p>I consider myself a responsible person and concerned about doing the things in the right way. It
+                    <p data-i18n="aboutMe.descriptionP2">I consider myself a responsible person and concerned about doing the things in the right way. It
                         bothers
-                        me not knowing how something works , so i always try to find information and learn.</ñ>
-                    <p> My goal is to get work experience , gradually improving and above all to incorporate new
+                        me not knowing how something works , so i always try to find information and learn.</p>
+                    <p data-i18n="aboutMe.descriptionP3"> My goal is to get work experience , gradually improving and above all to incorporate new
                         knowledge.
                     </p>
                 </div>
-                <div class="curriculum-section">
+                <div class="curriculum-section" data-i18n="aboutMe.curriculum">
                     <a href="CV English - LUCIANO RIENTE.pdf" target="_blank" class="curriculum-vitae-button">
                         <span>Curriculum Vitae (PDF)</span>
                     </a>
                 </div>
-                <h3 class="symbol description">Description/</h3>
+                <h3 class="symbol ending description" data-i18n="aboutMe.descriptionSymbol">Description</h3> <!-- Ver de poner el slash por css -->
             </section> <!-- Description About Me -->
         </section>
         <section class="my-languages-container">
             <img src="img/undraw_education_f8ru.svg" alt="Education logo" class="books-image decoration-image">
             <section class="languages-section">
-                <h3 class="symbol">Languages</h3>
+                <h3 class="symbol" data-i18n="aboutMe.languageSymbol">Languages</h3>
                 <div class="languages">
                     <div class="flex-language spanish-container">
-                        <h4>Spanish</h4>
+                        <h4 data-i18n="aboutMe.spanishLanguage">Spanish</h4>
                         <img src="img/argentina.svg" alt="Argentine's flag">
                     </div>
                     <div class="language-level-container">
-                        <p class="language-level">Native</p>
+                        <p class="language-level" data-i18n="aboutMe.spanishLevel">Native</p>
                     </div>
                     <!-- <div class="progress-bar-container">
                         <span class="progress-bar-color spanish"></span>
                     </div> -->
                     <div class="flex-language english-container">
-                        <h4>English</h4>
+                        <h4 data-i18n="aboutMe.englishLanguage">English</h4>
                         <img src="img/estados-unidos.svg" alt="United States' flag">
                     </div>
                     <!-- <div class="progress-bar-container">
@@ -133,24 +133,24 @@
                     <div class="language-level-container">
                         <p class="language-level">B2</p>
                     </div>
-                    <span class="improving-span">Improving my English...</span> <!-- Poner alguna animación -->
+                    <span class="improving-span" data-i18n="aboutMe.improvingParagraph">Improving my English...</span>
                 </div>
-                <h3 class="symbol">Languages/</h3>
+                <h3 class="symbol ending" data-i18n="aboutMe.languageSymbol">Languages</h3>
             </section>
         </section> <!-- My languages -->
         <section class="soft-skills-container">
             <img src="img/sight-to-cellphone.svg" alt="Man watching his cellphone"
                 class="soft-skills-image decoration-image">
             <section class="soft-skills-section">
-                <h3 class="symbol">Soft Skills</h3>
+                <h3 class="symbol" data-i18n="aboutMe.skillsSymbol">Soft Skills</h3>
                 <div class="soft-skills">
                     <button class="skill">
                         <div class="skill-header">
-                            <h4>Organization</h4>
+                            <h4 data-i18n="aboutMe.organizationSkill">Organization</h4>
                             <i class='bx bxs-chevron-down'></i>
                         </div>
                         <div class="skill-description">
-                            <p> I consider myself an organized person, so I am usually good at organizing my work
+                            <p data-i18n="aboutMe.organizationParagraph"> I consider myself an organized person, so I am usually good at organizing my work
                                 schedule. <br>
                                 As an example , if I have a lot of things to do, I try to manage my time in order to
                                 finish them on time
@@ -159,11 +159,11 @@
                     </button>
                     <button class="skill">
                         <div class="skill-header">
-                            <h4>Responsibility</h4>
+                            <h4 data-i18n="aboutMe.responsibilitySkill">Responsibility</h4>
                             <i class='bx bxs-chevron-down'></i>
                         </div>
                         <div class="skill-description">
-                            <p> I understand the consequences of doing or stop doing something which I previously
+                            <p data-i18n="aboutMe.responsibilityParagraph"> I understand the consequences of doing or stop doing something which I previously
                                 commited to. <br> I assume
                                 my responsibilites and guarantee the fulfillment of my commitments , which generally
                                 generates trust and peace of mind among people.</p>
@@ -171,11 +171,11 @@
                     </button>
                     <button class="skill">
                         <div class="skill-header">
-                            <h4>Leadership</h4>
+                            <h4 data-i18n="aboutMe.leadershipSkill">Leadership</h4>
                             <i class='bx bxs-chevron-down'></i>
                         </div>
                         <div class="skill-description">
-                            <p> Throughout my life , I have always enjoyed leadering group proyects that
+                            <p data-i18n="aboutMe.leadershipParagraph"> Throughout my life , I have always enjoyed leadering group proyects that
                                 came my way. <br>
                                 I feel that being the leader of a proyect or a team , helps me to organize better the
                                 work
@@ -185,11 +185,11 @@
                     </button>
                     <button class="skill">
                         <div class="skill-header">
-                            <h4>Perseverance</h4>
+                            <h4 data-i18n="aboutMe.perseveranceSkill">Perseverance</h4>
                             <i class='bx bxs-chevron-down'></i>
                         </div>
                         <div class="skill-description">
-                            <p>When I can not solve something , I try to rest. <br> Getting away from what I am doing
+                            <p data-i18n="aboutMe.perseveranceParagraph">When I can not solve something , I try to rest. <br> Getting away from what I am doing
                                 for a
                                 while, tends to help me clear my mind so that I can try it again later in a calmer way.
                                 <br>
@@ -198,22 +198,22 @@
                     </button>
                     <button class="skill">
                         <div class="skill-header">
-                            <h4>Honesty</h4>
+                            <h4 data-i18n="aboutMe.honestySkill">Honesty</h4>
                             <i class='bx bxs-chevron-down'></i>
                         </div>
                         <div class="skill-description">
-                            <p>I consider myself a sincere person , I like to always talk with the truth and being
+                            <p data-i18n="aboutMe.honestyParagraph">I consider myself a sincere person , I like to always talk with the truth and being
                                 honest. <br> In addition, I always try to be as clear as possible, without causing
                                 misunderstandings.</p>
                         </div>
                     </button>
                     <button class="skill">
                         <div class="skill-header">
-                            <h4>Companionship</h4>
+                            <h4 data-i18n="aboutMe.companionshipSkill">Companionship</h4>
                             <i class='bx bxs-chevron-down'></i>
                         </div>
                         <div class="skill-description">
-                            <p> When I am good at something and a partner needs help , I like to be able to give it.
+                            <p data-i18n="aboutMe.companionshipParagraph"> When I am good at something and a partner needs help , I like to be able to give it.
                                 <br>
                                 In my opinion , companionship makes that a work team works better.
                             </p>
@@ -221,10 +221,10 @@
                     </button>
                 </div>
                 <div class="list-under-contruction-container">
-                    <span class="improving-span">List under construction...</span>
+                    <span class="improving-span" data-i18n="aboutMe.underConstruction">List under construction...</span>
                     <i class="fas fa-tools"></i>
                 </div>
-                <h3 class="symbol final-symbol">Soft Skills/</h3>
+                <h3 class="symbol ending final-symbol" data-i18n="aboutMe.skillsSymbol">Soft Skills</h3>
             </section>
         </section> <!-- My soft skills -->
     </section> <!-- About Me section of the portfolio -->

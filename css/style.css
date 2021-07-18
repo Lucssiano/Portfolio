@@ -71,6 +71,9 @@ h2.title {
 .symbol::after {
 	content: '>';
 }
+.symbol.ending::after {
+	content: '/>';
+}
 @media (min-width: 370px) {
 	.decoration-image {
 		max-width: 35.6rem;
