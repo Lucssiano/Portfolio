@@ -6,6 +6,7 @@ function $$(selector) {
 class Translator {
 	constructor() {
 		this._elements = $$('[data-i18n]');
+		/* Español */
 		this._spanishChanges = {
 			navLinks: {
 				home: 'Inicio',
@@ -58,7 +59,41 @@ class Translator {
 					'Cuando soy bueno en algo, y un compañero necesita ayuda , me gusta poder brindarsela. <br> En mi opinión, el compañerismo hace que un equipo de trabajo funcione mejor.',
 				underConstruction: 'Lista en construcción...',
 			},
+			knowledges: {
+				title: 'Cono<span>cimientos</span>',
+				learningSpan: 'Aprendiendo',
+			},
+			projects: {
+				title: '<span>Pro</span>yectos',
+				hoverImage: 'Pon el cursor sobre la imagen',
+				clickToGo: 'Click para ir al sitio',
+				sourceCode: 'Código fuente',
+				webLink: 'Ir al sitio',
+				underRenovationP: 'En renovación',
+				RilubankP: 'Diseño de una página de un banco imaginario<br><br>(Hecho para practicar Diseño Web Responsivo)',
+				TicTacToe: 'Ta-Te-Ti',
+				TicTacToeParagraph: 'El reconocido juego Ta-Te-Ti , aquí juegas contra la computadora',
+				DevGuide:
+					'Una guia de desarrolladores hecha por un equipo de un grupo del Discord de Apx <br><br>(El link de Apx está en la página)',
+				FPOW: '4 Fotos - 1 Palabra',
+				FPOWparagraph: 'Un juego donde se muestran 4 fotos y tenés que adivinar la palabra con las letras que dispones',
+				HangmanGame: 'Ahorcado',
+				HangmanGameP: 'El reconocido juego "Ahorcado", tenés que adivinar la palabra diciendo letras',
+				MiniTriviaP: 'Una trivia de 10 preguntas de diferentes temas con 4 opciones de respuesta cada una',
+				listUnderConstruction: 'Lista bajo construcción y renovación...',
+			},
+			contact: {
+				title: 'Contacto',
+				formTitle: 'Ponte en contacto',
+				formName: 'Nombre',
+				formAffair: 'Asunto',
+				formMessage: 'Mensaje',
+				formSubmit: 'Enviar',
+				formEnding: 'Contame tu opinión sobre mi portafolio o enviame tu propuesta. <br> Contestaré pronto.',
+				botTitle: 'Chatea con el bot de Lucho',
+			},
 		};
+		/* Inglés */
 		this._englishChanges = {
 			navLinks: {
 				home: 'Home',
@@ -110,6 +145,38 @@ class Translator {
 				companionshipParagraph:
 					'When I am good at something and a partner needs help , I like to be able to give it. <br> In my opinion , companionship makes that a work team works better.',
 				underConstruction: 'List under construction...',
+			},
+			knowledges: {
+				title: 'Know<span>ledges</span>',
+				learningSpan: 'Learning',
+			},
+			projects: {
+				title: '<span>Pro</span>jects',
+				hoverImage: 'Hover the image',
+				clickToGo: 'Click to go to the site',
+				sourceCode: 'Source Code',
+				webLink: 'Go to the site',
+				underRenovationP: 'Under renovation',
+				RilubankP: 'Layout of an imaginary bank<br><br>(Made to practice Responsive Web Design)',
+				TicTacToe: 'Tic-Tac-Toe',
+				TicTacToeParagraph: 'The well-known Tic Tac Toe game , here you play against the computer',
+				DevGuide: 'A dev guide made by a team group of the Discord of Apx <br>(The link of Apx in this page)',
+				FPOW: '4 Pictures - 1 Word',
+				FPOWparagraph: 'A game where you have 4 pictures and you have to guess the word with the letters you have',
+				HangmanGame: 'Hangman Game',
+				HangmanGameP: 'The well-known Hangman Game, you have to guess the word by saying letters',
+				MiniTriviaP: "A Trivia where you have ten questions of different topics with 4 answer's options each one",
+				listUnderConstruction: 'List under construction and renovation...',
+			},
+			contact: {
+				title: 'Contact',
+				formTitle: 'Get in touch',
+				formName: 'Name',
+				formAffair: 'Affair',
+				formMessage: 'Message',
+				formSubmit: 'Send',
+				formEnding: 'Tell me your opinion about my portfolio or send me your proposal. <br>I will answer soon.',
+				botTitle: "Chat with Lucho's Bot",
 			},
 		};
 	}

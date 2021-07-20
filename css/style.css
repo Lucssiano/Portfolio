@@ -701,8 +701,23 @@ a.curriculum-vitae-button span {
 	background-color: var(--dark-grey);
 }
 .my-knowledges h2 {
+	font-size: 3.1rem;
+	font-weight: 800;
+	text-align: center;
+	padding: 6rem 0 5rem 0;
 	color: var(--white);
 	-webkit-text-stroke: 0.275rem var(--black);
+}
+@media (min-width: 420px) {
+	.my-knowledges h2 {
+		font-size: 5rem;
+	}
+}
+@media (min-width: 550px) {
+	.my-knowledges h2 {
+		font-size: 6.5rem;
+		padding: 8rem 0;
+	}
 }
 .my-knowledges h2 span {
 	color: var(--primary-color);
@@ -864,6 +879,11 @@ a.curriculum-vitae-button span {
 }
 @media (min-width: 468px) {
 	.my-projects .grid-projects-container {
+		grid-template-columns: 68%;
+	}
+}
+@media (min-width: 600px) {
+	.my-projects .grid-projects-container {
 		grid-template-columns: 60%;
 	}
 }
@@ -957,15 +977,18 @@ a.curriculum-vitae-button span {
 	color: var(--white);
 	padding: 0.5rem;
 }
-.my-projects .grid-projects-container .grid-project .description-project p span.click-to-go {
+.my-projects .grid-projects-container .grid-project .description-project span.click-to-go {
 	color: var(--primary-color);
 	font-weight: 900;
+	font-size: 1.4rem;
+	line-height: 1.8rem;
 }
-.my-projects .grid-projects-container .grid-project .description-project p span.renovation-paragraph {
+.my-projects .grid-projects-container .grid-project .description-project span.renovation-paragraph {
 	font-size: 1.2rem;
 	font-weight: 900;
 	text-transform: uppercase;
 	letter-spacing: 0.5rem;
+	line-height: 1.8rem;
 	color: var(--dark-red);
 }
 .grid-projects-container .grid-project .flex-view-project-container {
