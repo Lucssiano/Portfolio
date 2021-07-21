@@ -92,6 +92,33 @@ class Translator {
 				formEnding: 'Contame tu opinión sobre mi portafolio o enviame tu propuesta. <br> Contestaré pronto.',
 				botTitle: 'Chatea con el bot de Lucho',
 			},
+			botChat: {
+				title: "Bot de Lucho",
+				hi: 'Hola!',
+				firstMessage: "Hola! Soy el bot de Lucho &#128540;",
+				secondMessage: 'Soy como Lucho, pero mucho más charlatán &#128518;',
+				thirdMessage: 'Como te puedo ayudar hoy?',
+				firstPossibleAnswer: '&#128513; Simplemente quiero decir hola',
+				secondPossibleAnswer: "&#128187; Me gustaría contactarte",
+				lastAnswer: 'Te puedo ayudar con algo más? &#128521',
+				firstAnswer: 'Simplemente quiero decir hola',
+				firstBotAnswerOne: 'Hola!',
+				firstBotAnswerTwo: 'Gracias por saludar &#128513',
+				firstBotAnswerThree: "Espero que hayas disfrutado navegar el portafolio de Luciano",
+				secondAnswer: "Me gustaría contactarte",
+				secondBotAnswerOne: 'Hola!',
+				secondBotAnswerTwo: "Genial! Luciano va a estar muy feliz por eso &#128378",
+				secondBotAnswerThree:
+					'Le puedes enviar un mensaje a su <a href="https://www.linkedin.com/in/luciano-riente-7551901b1/" target="_blank">LinkedIn</a></p>',
+				secondBotAnswerFour:
+					'O quizas le puedes enviar un email en el <a href="#name" class="link-contact-bot">Formulario de contacto</a> de esta página y podrás hablar un poco más con el!',
+			},
+			appreciation: {
+				title: 'Gracias por visitar mi portafolio',
+			},
+			copyright: {
+				title: 'Luciano Riente - Portafolio &copy; 2021 <br>Todos los derechos reservados.',
+			},
 		};
 		/* Inglés */
 		this._englishChanges = {
@@ -177,6 +204,33 @@ class Translator {
 				formSubmit: 'Send',
 				formEnding: 'Tell me your opinion about my portfolio or send me your proposal. <br>I will answer soon.',
 				botTitle: "Chat with Lucho's Bot",
+			},
+			botChat: {
+				title: "Lucho's Bot",
+				hi: 'Hi!',
+				firstMessage: "Hi! I'm Lucho's bot &#128540;",
+				secondMessage: 'I’m just like Lucho, but a far more talkative &#128518;',
+				thirdMessage: 'How can I help you today?',
+				firstPossibleAnswer: '&#128513; I just want to say hello',
+				secondPossibleAnswer: "&#128187; I'd like to contact you",
+				lastAnswer: 'Can I help you with anything else? &#128521',
+				firstAnswer: 'I just want to say hello',
+				firstBotAnswerOne: 'Hello!',
+				firstBotAnswerTwo: 'Thanks for saying hi &#128513',
+				firstBotAnswerThree: "I hope you've enjoyed browsing Luciano's portfolio",
+				secondAnswer: "I'd like to contact you",
+				secondBotAnswerOne: 'Hi!',
+				secondBotAnswerTwo: "Great! Luciano'll be happy about that &#128378",
+				secondBotAnswerThree:
+					'You could send him a message to his <a href="https://www.linkedin.com/in/luciano-riente-7551901b1/" target="_blank">LinkedIn</a></p>',
+				secondBotAnswerFour:
+					'Or may be you could send him an email in the <a href="#name" class="link-contact-bot">Contact form</a> of this page and lets chat with him further!',
+			},
+			appreciation: {
+				title: 'Thank you for visiting my portfolio',
+			},
+			copyright: {
+				title: 'Luciano Riente - Portfolio &copy; 2021 <br>All rights reserved.',
 			},
 		};
 	}
