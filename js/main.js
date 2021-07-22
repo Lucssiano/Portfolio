@@ -109,6 +109,7 @@ englishButton.addEventListener('click', () => {
 		spanishButtonImg.classList.remove('active');
 	}
 });
+// ------------- //
 
 // --- Soft skills --- //
 const skill = $$('.skill');
